@@ -1,0 +1,44 @@
+{
+    "name": "control",
+    "maps": [
+        {
+            "name": "cont",
+            "id": "7af73690-b512-4a97-ac80-54b10c53edc4",
+            "actions": [
+                {
+                    "name": "shoot",
+                    "type": "Button",
+                    "id": "9b8327ca-3841-4b3e-9631-c5b1fdd4e067",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2ce587f6-bc19-411b-95b1-88fe2caeb628",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "81d175b5-97e9-4cbc-9263-d0f6f055c8e8",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
