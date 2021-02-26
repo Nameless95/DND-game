@@ -14,7 +14,7 @@ public class movement : MonoBehaviour
     public Camera cm;
     public GunTemplate gun;
     float gunCooldown;
-    public TextMeshPro textCooldown; 
+    public Slider slideCooldown; 
 
     void Awake()
     {
@@ -28,12 +28,12 @@ public class movement : MonoBehaviour
     private void Update()
     {
         gunCooldown = (gunCooldown >=0) ? (gunCooldown-Time.deltaTime): 0 ;
-        textCooldown.text = "Cooldown " + Mathf.RoundToInt(gunCooldown);
+        slideCooldown.value = gunCooldown/gun.fireRate ;
     }
 
     void shoot()
     {
-        Debug.Log(gunCooldown);
+        Debug.Log(  gunCooldown/gun.fireRate);
         if (gunCooldown > 0) 
             return;
         gunCooldown = gun.fireRate;
