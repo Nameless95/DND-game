@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
 
 
 
@@ -12,6 +14,7 @@ public class movement : MonoBehaviour
     public Camera cm;
     public GunTemplate gun;
     float gunCooldown;
+    public TextMeshPro textCooldown; 
 
     void Awake()
     {
@@ -24,7 +27,8 @@ public class movement : MonoBehaviour
 
     private void Update()
     {
-        gunCooldown -= Time.deltaTime;
+        gunCooldown = (gunCooldown >=0) ? (gunCooldown-Time.deltaTime): 0 ;
+        textCooldown.text = "Cooldown " + Mathf.RoundToInt(gunCooldown);
     }
 
     void shoot()
