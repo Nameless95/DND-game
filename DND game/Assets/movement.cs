@@ -11,8 +11,7 @@ public class movement : MonoBehaviour
     Rigidbody2D rb;
     public Camera cm;
     public GunTemplate gun;
-    float gunCooldown;
-
+    float gunCooldown; 
     void Awake()
     {
         left = new Control();
@@ -29,6 +28,8 @@ public class movement : MonoBehaviour
 
     void shoot()
     {
+        
+ 
         Debug.Log(gunCooldown);
         if (gunCooldown > 0) 
             return;

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17d61e96e4228654280ec07f705e2fe9, type: 3}
-  m_Name: NormalGun
+  m_Name: PlayBox Two
   m_EditorClassIdentifier: 
-  gunName: Normal Gun
-  damage: 10
+  gunName: PlayBox Two
+  damage: 50
   bullet: 0
-  fireRate: 1
-  knockBack: 250
+  fireRate: 10
+  knockBack: 600

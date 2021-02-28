@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17d61e96e4228654280ec07f705e2fe9, type: 3}
-  m_Name: StrongGun
+  m_Name: Wheeler
   m_EditorClassIdentifier: 
-  gunName: Strong Gun
-  damage: 10
+  gunName: Wheeler (*note the gun needs a knock back affect and the knock back would
+    be doubled)
+  damage: 5
   bullet: 0
   fireRate: 2
-  knockBack: 375
+  knockBack: 300
