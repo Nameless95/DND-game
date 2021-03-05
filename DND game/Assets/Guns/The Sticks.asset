@@ -16,4 +16,4 @@ MonoBehaviour:
   damage: 10
   bullet: 0
   fireRate: 1
-  knockBack: 250
+  knockBack: 10000

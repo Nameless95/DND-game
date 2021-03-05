@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
 
 
 
@@ -11,7 +13,9 @@ public class movement : MonoBehaviour
     Rigidbody2D rb;
     public Camera cm;
     public GunTemplate gun;
-    float gunCooldown; 
+    float gunCooldown;
+    public Slider slideCooldown; 
+
     void Awake()
     {
         left = new Control();
@@ -23,14 +27,13 @@ public class movement : MonoBehaviour
 
     private void Update()
     {
-        gunCooldown -= Time.deltaTime;
+        gunCooldown = (gunCooldown >=0) ? (gunCooldown-Time.deltaTime): 0 ;
+        slideCooldown.value = gunCooldown/gun.fireRate ;
     }
 
     void shoot()
     {
-        
- 
-        Debug.Log(gunCooldown);
+        Debug.Log(  gunCooldown/gun.fireRate);
         if (gunCooldown > 0) 
             return;
         gunCooldown = gun.fireRate;
