@@ -15,5 +15,5 @@ MonoBehaviour:
   gunName: Normal Gun
   damage: 10
   bullet: 0
-  fireRate: 1
-  knockBack: 10000
+  fireRate: 0.1
+  knockBack: 10

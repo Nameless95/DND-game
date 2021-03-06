@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,6 +15,7 @@ public class movement : MonoBehaviour
     public GunTemplate gun;
     float gunCooldown;
     public Slider slideCooldown; 
+    public GameObject bulletPrefab;
 
     void Awake()
     {
@@ -23,6 +24,7 @@ public class movement : MonoBehaviour
         left.cont.shoot.performed += ctx => shoot();
         gunCooldown = gun.fireRate;
         Debug.Log("working");
+
     }
 
     private void Update()
@@ -42,8 +44,14 @@ public class movement : MonoBehaviour
         Debug.Log(gun.gunName + " was used");
         power.Normalize();
         power *= gun.knockBack;
-        rb.AddForce(power);
+        rb.velocity = power;
+
+        //Bulletstuff
+        GameObject tempObject = BPS.instance.GetPooledObject("Bullet");
+        if(tempObject == null) Debug.Log("OWfjeo");
+        tempObject.GetComponent<gun>().WakeUp((Vector2)transform.position, power);
     }
+
 
     private void OnEnable()
     {
