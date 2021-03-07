@@ -48,7 +48,6 @@ public class movement : MonoBehaviour
 
         //Bulletstuff
         GameObject tempObject = BPS.instance.GetPooledObject("Bullet");
-        if(tempObject == null) Debug.Log("OWfjeo");
         tempObject.GetComponent<gun>().WakeUp((Vector2)transform.position, power);
     }
 

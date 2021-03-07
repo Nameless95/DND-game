@@ -10,6 +10,7 @@ public class BPS : MonoBehaviour
     List<GameObject> pooledObjects = new List<GameObject>();
     [SerializeField] List<PoolItem> itemsToPool = null;
 
+
     private void Awake(){
         instance = this;
     }
