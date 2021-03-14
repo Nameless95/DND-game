@@ -11,12 +11,6 @@ public class UISystem : MonoBehaviour
     public void StartGame(){
         SceneManager.LoadScene(1);
     }
-    public void startLobby(){
-        SceneManager.LoadScene(0);
-    }
-    public void startSettings(){
-        SceneManager.LoadScene(2);
-    }
 
     public void Toggle(){
         if(toggleText.text == "On"){
