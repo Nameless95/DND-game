@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
+
 public class BPS : MonoBehaviour
 {
     public static BPS instance;
