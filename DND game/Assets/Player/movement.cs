@@ -48,7 +48,7 @@ public class movement : MonoBehaviour
 
         //Bulletstuff
         GameObject tempObject = BPS.instance.GetPooledObject("Bullet");
-        tempObject.GetComponent<gun>().WakeUp((Vector2)transform.position, power);
+        tempObject.GetComponent<gun>().WakeUp((Vector2)transform.position, power, gun.damage);
     }
 
 

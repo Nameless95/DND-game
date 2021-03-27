@@ -10,7 +10,7 @@ public class Patrol : MonoBehaviour
     int layer_mask = LayerMask.GetMask("Platform");
     
     private bool movingRight = true;
-
+    private bool FoundPlayer = false; 
     public Transform groundDetection;
 
     void Update()
@@ -29,7 +29,7 @@ public class Patrol : MonoBehaviour
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 movingRight = true;
-            }
+            } 
         }
     }
 }
