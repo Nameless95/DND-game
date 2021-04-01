@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0)
         {
-            Debug.Log("Death");
+           // Debug.Log("Death");
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
