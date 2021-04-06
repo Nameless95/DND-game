@@ -1125,7 +1125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsToPool:
   - id: Bullet
-    poolObject: {fileID: 6158637966996720353, guid: 4d76c3a1bf6a8465ebba5e727cffd444,
+    poolObject: {fileID: 4748625081288368435, guid: 6a5d18fd816d79841850870e6da89abe,
       type: 3}
 --- !u!4 &1645240544
 Transform:
@@ -1246,7 +1246,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.5, y: 1.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1315,7 +1315,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 027bf144a72ede34388828020d6fbc38, type: 3}
+  m_Sprite: {fileID: 2829232388215122354, guid: b5fccc4fc3fff41c8932f850a39d955a,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
