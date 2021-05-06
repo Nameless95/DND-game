@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 47141201}
   - component: {fileID: 47141202}
   m_Layer: 12
-  m_Name: Enemy
+  m_Name: Jock-Strap (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -399,7 +399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222023200}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.642, y: 0.198, z: 0}
+  m_LocalPosition: {x: -5.87, y: -1.92, z: 0}
   m_LocalScale: {x: 5.1755276, y: 0.9446979, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -678,12 +678,12 @@ GameObject:
   m_Component:
   - component: {fileID: 423959976}
   - component: {fileID: 423959975}
-  - component: {fileID: 423959974}
   - component: {fileID: 423959973}
   - component: {fileID: 423959972}
   - component: {fileID: 423959971}
+  - component: {fileID: 423959974}
   m_Layer: 12
-  m_Name: Enemy (1)
+  m_Name: BookWorm
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -698,10 +698,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 423959970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cebf9c272852fdc41a511655d9313aa5, type: 3}
+  m_Script: {fileID: 11500000, guid: a52308a17ba045447a1b3d17b92956ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PatrolScript: {fileID: 423959974}
+  player: {fileID: 1809482914}
+  speed: 2
+  StopMoving: {fileID: 423959974}
+  shootingRange: 1
+  bullet: {fileID: 396643059264816569, guid: b2b4463742c88e54e80072ecb686e7ed, type: 3}
 --- !u!114 &423959972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -796,7 +800,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2ba0fc64d5e17044e9bf900bc668df8b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee82032f82aa6e54eaa22a2843983a5a, type: 3}
   m_Color: {r: 0.9433962, g: 0.10234961, b: 0.10234961, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -815,8 +819,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423959970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.97, y: 1.21, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -5.99, y: -1, z: 0}
+  m_LocalScale: {x: 0.91411924, y: 0.89500433, z: 1}
   m_Children:
   - {fileID: 1581276567}
   m_Father: {fileID: 0}
@@ -1443,7 +1447,7 @@ GameObject:
   - component: {fileID: 1367627556}
   m_Layer: 12
   m_Name: Ground Detection
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1573,7 +1577,7 @@ GameObject:
   - component: {fileID: 1581276567}
   m_Layer: 12
   m_Name: Ground Detection
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1755,6 +1759,9 @@ MonoBehaviour:
   - id: Bullet
     poolObject: {fileID: 6158637966996720353, guid: 4d76c3a1bf6a8465ebba5e727cffd444,
       type: 3}
+  - id: EBullet
+    poolObject: {fileID: 396643059264816569, guid: b2b4463742c88e54e80072ecb686e7ed,
+      type: 3}
 --- !u!4 &1645240544
 Transform:
   m_ObjectHideFlags: 0
@@ -1821,7 +1828,7 @@ GameObject:
   - component: {fileID: 1809482915}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

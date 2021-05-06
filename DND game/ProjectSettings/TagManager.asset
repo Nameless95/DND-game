@@ -9,6 +9,7 @@ TagManager:
   - Bulet
   - Platform
   - Enemy
+  - EBullet
   layers:
   - Default
   - TransparentFX

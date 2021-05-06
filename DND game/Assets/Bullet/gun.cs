@@ -18,20 +18,23 @@ public class gun : MonoBehaviour
         damage = BulletDam; 
     }
 
-    void Update(){
+    void Update(){  //makes the bullet go in the straight line (speeds too) 
         rb.velocity = transform.right * -10;
     }
 
     void OnCollisionEnter2D(Collision2D collision){
-        if(collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Platform")
+        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Platform"))
         {
             gameObject.SetActive(false);
+
         }
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            gameObject.SetActive(false);
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage); 
-           
+                gameObject.SetActive(false);
+              
+               collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+
         }
-    }
+
+       }
 }

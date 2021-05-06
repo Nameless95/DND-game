@@ -35,7 +35,7 @@ public class movement : MonoBehaviour
 
     void shoot()
     {
-        Debug.Log(  gunCooldown/gun.fireRate);
+       // Debug.Log(  gunCooldown/gun.fireRate);
         if (gunCooldown > 0) 
             return;
         gunCooldown = gun.fireRate;

@@ -17,7 +17,7 @@ public class Jock_Strap_Enemy : MonoBehaviour
     void Update()
     {
 
-        if ((player.transform.position - this.transform.position).sqrMagnitude < 5 * 5)
+        if ((player.transform.position - this.transform.position).sqrMagnitude < 7 * 7)
         {
             transform.Translate(Vector2.right * PatrolScript.speed * 3 * Time.deltaTime);
 
