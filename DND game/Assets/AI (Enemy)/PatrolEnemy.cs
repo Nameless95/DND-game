@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jock_Strap_Enemy : MonoBehaviour
+public class PatrolEnemy : MonoBehaviour
 {
     private GameObject player;
     public Patrol PatrolScript;

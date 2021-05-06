@@ -11,15 +11,9 @@ public class EnemyBullet : MonoBehaviour
 
     Vector2 moveDirection;
 
-   //void Start()
-   // {
-   //     rb = GetComponent<Rigidbody2D>();
-   //     player = GameObject.Find("Player");
-   //     moveDirection = (player.transform.position - transform.position).normalized * moveSpeed; 
-   //     rb.velocity = new Vector2(moveDirection.x * 2, moveDirection.y * 2);
         
 
-   // }
+  
    public void WakeUp(Vector2 location, Quaternion direction) //BPS 
     {
         transform.position = location;
@@ -35,7 +29,7 @@ public class EnemyBullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("Bullet")) 
         {
             gameObject.SetActive(false);
 

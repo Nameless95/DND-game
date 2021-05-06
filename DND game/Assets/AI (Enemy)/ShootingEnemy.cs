@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Teacher : MonoBehaviour
+public class ShootingEnemy : MonoBehaviour
 {
     public Transform player;
    

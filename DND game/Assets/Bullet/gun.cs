@@ -23,7 +23,7 @@ public class gun : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Platform") || collision.gameObject.CompareTag("EBullet"))
         {
             gameObject.SetActive(false);
 
