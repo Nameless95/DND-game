@@ -15,8 +15,7 @@ public class ShootingEnemy : MonoBehaviour
 
     public float shootingRange;
     public GameObject bullet;
-    //public float fireRate = 1f;
-    //private float NextFireTime; 
+    
     private void Start()
     {
         fireRate = 1f;
@@ -48,7 +47,7 @@ public class ShootingEnemy : MonoBehaviour
         {
             GameObject tempObject = BPS.instance.GetPooledObject("EBullet");
             tempObject.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position, Quaternion.identity);
-            // Instantiate(bullet, transform.position, Quaternion.identity);
+            
             nextFire = Time.time + fireRate; 
         }
     }
