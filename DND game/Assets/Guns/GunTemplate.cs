@@ -9,6 +9,7 @@ public class GunTemplate : ScriptableObject
     public int damage;
     public int bullet;
     public float fireRate;
-    public float knockBack;  
+    public float knockBack;
+    public Sprite GunSprite; 
 
     }
