@@ -10,6 +10,7 @@ public class GunTemplate : ScriptableObject
     public int bullet;
     public float fireRate;
     public float knockBack;
-    public Sprite GunSprite; 
+    public Sprite GunSprite;
+    public Vector2 offset; 
 
     }
