@@ -6,12 +6,12 @@ using UnityEngine.Audio;
 public class MusicPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
-    public AudioSource Musi;
+    public AudioSource AudioSource;
 
     private float musicVolume = 1f;
     void Start()
     {
-       Musi.Play();
+        AudioSource.Play();
     }
 
     // Update is called once per frame
@@ -22,6 +22,6 @@ public class MusicPlayer : MonoBehaviour
     void Update()
     {
         //Debug.Log(musicVolume);
-        Musi.volume = musicVolume;
+        AudioSource.volume = musicVolume;
     }
 }
