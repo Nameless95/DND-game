@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:DND game/Assets/AI (Enemy).meta
+guid: d07c12beeeba67643af481e016648d7f
+folderAsset: yes
+DefaultImporter:
+=======
 guid: ddc60806dc2a80511a045dd9926a11ed
 NativeFormatImporter:
+>>>>>>> main:DND game/Assets/Player/Idle.anim.meta
   externalObjects: {}
   mainObjectFileID: 7400000
   userData: 
