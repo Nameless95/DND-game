@@ -17,8 +17,7 @@ public class movement : MonoBehaviour
     public Slider slideCooldown; 
     public GameObject bulletPrefab;
     public GameObject GunSprite;
-    public Camera cam;
-    public float aimOffset; 
+    public Camera cam; 
 
     void Awake()
     {
@@ -27,7 +26,6 @@ public class movement : MonoBehaviour
         left.cont.shoot.performed += ctx => shoot();
         gunCooldown = gun.fireRate;
         GunSprite.GetComponent<SpriteRenderer>().sprite=gun.GunSprite;
-        GunSprite.transform.position = new Vector3(GunSprite.transform.position.x + gun.offset.x, GunSprite.transform.position.y + gun.offset.y); 
         Debug.Log("working");
 
     }
@@ -36,19 +34,10 @@ public class movement : MonoBehaviour
     {
         gunCooldown = (gunCooldown >=0) ? (gunCooldown-Time.deltaTime): 0 ;
         slideCooldown.value = gunCooldown/gun.fireRate;
-
-        Vector3 mousePos = Mouse.current.position.ReadValue(); 
-        mousePos.z = -20;
-        Vector3 objectPos = cam.WorldToScreenPoint(transform.position);
-        mousePos.x = mousePos.x - objectPos.x;
-        mousePos.y = mousePos.y - objectPos.y;
-        float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-        GunSprite.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + aimOffset));
-
-        //Vector3 targetPostion = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue()); 
-        //    //Position.current.postion.currentvalue);
-        //targetPostion.z = -20; 
-        //GunSprite.transform.rotation = Quaternion.Euler(new Vector3 (0,0,Vector3.SignedAngle(Vector3.right, targetPostion - this.transform.position, Vector3.forward) + aimOffset)); 
+        Vector3 targetPostion = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue()); 
+            //Position.current.postion.currentvalue);
+        targetPostion.z = 0; 
+        GunSprite.transform.rotation = Quaternion.Euler(new Vector3 (0,0,Vector3.SignedAngle(Vector3.right, targetPostion - this.transform.position, Vector3.forward))); 
 
     }
 
