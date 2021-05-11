@@ -7,9 +7,6 @@ TagManager:
   - Floor
   - Bullet
   - Bulet
-  - Platform
-  - Enemy
-  - EBullet
   layers:
   - Default
   - TransparentFX
@@ -22,8 +19,8 @@ TagManager:
   - Player
   - Bullet
   - Floor
-  - Platform
-  - Enemy
+  - 
+  - 
   - 
   - 
   - 
