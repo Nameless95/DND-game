@@ -15,5 +15,9 @@ MonoBehaviour:
   gunName: 'The Sticks '
   damage: 10
   bullet: 0
-  fireRate: 0.1
+  fireRate: 1
   knockBack: 10
+  GunSprite: {fileID: 0}
+  magSize: 100
+  ammo: 68
+  reloadTime: 4
