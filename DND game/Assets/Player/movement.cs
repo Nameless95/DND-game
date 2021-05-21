@@ -16,7 +16,8 @@ public class movement : MonoBehaviour
     float gunCooldown;
     public Slider slideCooldown; 
     public GameObject bulletPrefab;
-    public GameObject GunSprite; 
+    public GameObject GunSprite;
+    public Camera cam; 
 
     void Awake()
     {
@@ -33,7 +34,7 @@ public class movement : MonoBehaviour
     {
         gunCooldown = (gunCooldown >=0) ? (gunCooldown-Time.deltaTime): 0 ;
         slideCooldown.value = gunCooldown/gun.fireRate;
-        Vector3 targetPostion = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()); 
+        Vector3 targetPostion = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue()); 
             //Position.current.postion.currentvalue);
         targetPostion.z = 0; 
         GunSprite.transform.rotation = Quaternion.Euler(new Vector3 (0,0,Vector3.SignedAngle(Vector3.right, targetPostion - this.transform.position, Vector3.forward))); 

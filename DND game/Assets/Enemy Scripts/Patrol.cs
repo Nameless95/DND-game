@@ -8,6 +8,7 @@ public class Patrol : MonoBehaviour
 
     public float speed;
     int layer_mask = LayerMask.GetMask("Platform");
+  //  int layer_mask2 = LayerMask.GetMask("Floor"); 
 
     private bool movingRight = true;
     private bool FoundPlayer = false;

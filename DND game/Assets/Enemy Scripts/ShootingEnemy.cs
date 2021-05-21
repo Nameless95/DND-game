@@ -9,7 +9,7 @@ public class ShootingEnemy : MonoBehaviour
     private float distToPlayer;
     public float speed; 
     public Patrol StopMoving;
-
+    public float damage; 
    private float fireRate;
     private float nextFire;
 
