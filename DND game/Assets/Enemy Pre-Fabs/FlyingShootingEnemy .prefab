@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8927933924313100919}
   - component: {fileID: 8927933924313100918}
-  - component: {fileID: 8927933924313100917}
   - component: {fileID: 8927933924313100904}
   - component: {fileID: 8927933924313100905}
-  - component: {fileID: 4477020752786347447}
+  - component: {fileID: 6639172589190768388}
   m_Layer: 12
   m_Name: 'FlyingShootingEnemy '
   m_TagString: Enemy
@@ -31,8 +30,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.82, y: 2.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2510856869813461458}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -86,20 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8927933924313100917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8927933924313100916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63ada09eeaed3ac4bae62f66e43a9a0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  groundDetection: {fileID: 0}
 --- !u!61 &8927933924313100904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141,7 +125,7 @@ MonoBehaviour:
   health: 20
   deathEffect: {fileID: 1266392279119867486, guid: 803d9a010cb921645bca49162800b7b9,
     type: 3}
---- !u!114 &4477020752786347447
+--- !u!114 &6639172589190768388
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,41 +134,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8927933924313100916}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a52308a17ba045447a1b3d17b92956ba, type: 3}
+  m_Script: {fileID: 11500000, guid: f02df126929c9b74da51de6df7464835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  speed: 2
-  StopMoving: {fileID: 8927933924313100917}
-  shootingRange: 2
+  moveSpeed: 1
+  LineofSite: 10
+  shootingRange: 5
   bullet: {fileID: 396643059264816569, guid: b2b4463742c88e54e80072ecb686e7ed, type: 3}
---- !u!1 &9045069227498637766
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2510856869813461458}
-  m_Layer: 12
-  m_Name: Ground Detection
-  m_TagString: Enemy
-  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2510856869813461458
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9045069227498637766}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.2000003, y: -3.7, z: -77.02295}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8927933924313100919}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

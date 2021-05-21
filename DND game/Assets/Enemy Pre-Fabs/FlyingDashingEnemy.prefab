@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4844770311582309295
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4844770311582309288}
-  m_Layer: 12
-  m_Name: Ground Detection
-  m_TagString: Enemy
-  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4844770311582309288
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4844770311582309295}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.69, y: -0.21, z: -77.02295}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4844770312978685379}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4844770312978685376
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4844770312978685379}
   - component: {fileID: 4844770312978685378}
-  - component: {fileID: 4844770312978685377}
   - component: {fileID: 4844770312978685404}
   - component: {fileID: 4844770312978685405}
-  - component: {fileID: 4844770312978685406}
+  - component: {fileID: 1993425644403138736}
   m_Layer: 12
   m_Name: FlyingDashingEnemy
   m_TagString: Enemy
@@ -61,8 +30,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.02, y: 3.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4844770311582309288}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -116,20 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4844770312978685377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4844770312978685376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63ada09eeaed3ac4bae62f66e43a9a0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  groundDetection: {fileID: 4844770311582309288}
 --- !u!61 &4844770312978685404
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -171,7 +125,7 @@ MonoBehaviour:
   health: 20
   deathEffect: {fileID: 1266392279119867486, guid: 803d9a010cb921645bca49162800b7b9,
     type: 3}
---- !u!114 &4844770312978685406
+--- !u!114 &1993425644403138736
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,7 +134,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4844770312978685376}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cebf9c272852fdc41a511655d9313aa5, type: 3}
+  m_Script: {fileID: 11500000, guid: be21c82dd10f15f479d7d23449e55b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PatrolScript: {fileID: 4844770312978685377}
+  player: {fileID: 0}
+  moveSpeed: 2
+  playerRange: 5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  playerInRange: 0
