@@ -16,7 +16,10 @@ public class movement : MonoBehaviour
     float gunCooldown;
     public Slider slideCooldown; 
     public GameObject bulletPrefab;
-    public GameObject GunSprite; 
+    public GameObject GunSprite;
+    public LayerMask groundLayer;
+    public BoxCollider2D boxCollider;
+    public ParticleSystem slideParticles;
 
     void Awake()
     {
@@ -26,7 +29,8 @@ public class movement : MonoBehaviour
         gunCooldown = gun.fireRate;
         GunSprite.GetComponent<SpriteRenderer>().sprite=gun.GunSprite;
         Debug.Log("working");
-
+        boxCollider = GetComponent<BoxCollider2D>();
+        slideParticles = GetComponentInChildren<ParticleSystem>();
     }
 
     private void Update()
@@ -36,8 +40,28 @@ public class movement : MonoBehaviour
         Vector3 targetPostion = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()); 
             //Position.current.postion.currentvalue);
         targetPostion.z = 0; 
-        GunSprite.transform.rotation = Quaternion.Euler(new Vector3 (0,0,Vector3.SignedAngle(Vector3.right, targetPostion - this.transform.position, Vector3.forward))); 
+        GunSprite.transform.rotation = Quaternion.Euler(new Vector3 (0,0,Vector3.SignedAngle(Vector3.right, targetPostion - this.transform.position, Vector3.forward)));
 
+        if (rb.velocity.sqrMagnitude > 0 && OnGround())
+        {
+            slideParticles.Play();
+           //slideParticles.emissionRate *= rb.velocity.sqrMagnitude;
+        }
+        else
+            slideParticles.Stop();
+
+    }
+
+    private bool OnGround()
+    {
+        float extraHeightText = .5f;
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down,
+            extraHeightText, groundLayer);
+
+        if (raycastHit.collider != null)
+            return true;
+        else
+            return false;
     }
 
     void shoot()
