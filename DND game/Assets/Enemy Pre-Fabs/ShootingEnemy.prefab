@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 3865537868370780484}
   - component: {fileID: 3865537868370780505}
   - component: {fileID: 3865537868370780504}
-  - component: {fileID: 3865537868370780507}
   - component: {fileID: 8098263814542788230}
   m_Layer: 12
   m_Name: ShootingEnemy
@@ -130,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  distance: 1
   groundDetection: {fileID: 3865537867015300909}
 --- !u!61 &3865537868370780505
 BoxCollider2D:
@@ -172,19 +172,6 @@ MonoBehaviour:
   health: 20
   deathEffect: {fileID: 1266392279119867486, guid: 803d9a010cb921645bca49162800b7b9,
     type: 3}
---- !u!114 &3865537868370780507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3865537868370780485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cebf9c272852fdc41a511655d9313aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PatrolScript: {fileID: 3865537868370780484}
 --- !u!114 &8098263814542788230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,5 +187,6 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 2
   StopMoving: {fileID: 3865537868370780484}
-  shootingRange: 2
+  damage: 0
+  shootingRange: 10
   bullet: {fileID: 396643059264816569, guid: b2b4463742c88e54e80072ecb686e7ed, type: 3}

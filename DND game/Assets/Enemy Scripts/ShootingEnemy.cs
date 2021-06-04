@@ -25,10 +25,11 @@ public class ShootingEnemy : MonoBehaviour
     private void Update()
     {
         distToPlayer = Vector2.Distance(transform.position, player.position); ///calculates the two game objects (player and enemy) 
-        if ((player.transform.position - this.transform.position).sqrMagnitude < 6 * 6 && distToPlayer > shootingRange)
+        if ((player.transform.position - this.transform.position).sqrMagnitude < 6 * 6 || distToPlayer > shootingRange)
         {
             CheckIfTimeToFire(); 
             StopMoving.speed = 0;  //makes the enemy stop moving 
+          //  Debug.Log("Shoot"); 
 
         }
         else
@@ -52,6 +53,7 @@ public class ShootingEnemy : MonoBehaviour
         }
     }
 
+   
 
 }
 

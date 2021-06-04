@@ -19,7 +19,7 @@ public class PatrolEnemy : MonoBehaviour
 
         if ((player.transform.position - this.transform.position).sqrMagnitude < 7 * 7)
         {
-            transform.Translate(Vector2.right * PatrolScript.speed * 3 * Time.deltaTime);
+            transform.Translate(Vector2.right * PatrolScript.speed * 3 * Time.deltaTime * PatrolScript.distance);
 
         }
         

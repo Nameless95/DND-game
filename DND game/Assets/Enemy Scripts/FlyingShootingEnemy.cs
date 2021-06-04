@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class FlyingShootingEnemy : MonoBehaviour
 {
     public Transform player;
@@ -12,13 +14,15 @@ public class FlyingShootingEnemy : MonoBehaviour
     public float shootingRange;
     public GameObject bullet;
 
-    private float fireRate;
+    public float fireRate;
     private float nextFire;
+    [HideInInspector]
+    public bool IsShooting; 
 
 
     void Start()
     {
-            fireRate = 1f;
+           // fireRate = 1f;
             nextFire = Time.time;
         
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -27,21 +31,27 @@ public class FlyingShootingEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     float distanceFromPlayer = Vector2.Distance(player.position, transform.position); 
-    if (distanceFromPlayer < LineofSite && distanceFromPlayer >= shootingRange) {
+    if (distanceFromPlayer < LineofSite && distanceFromPlayer >= shootingRange) 
+        {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
             CheckIfTimeToFire();
-       } 
-        else if (distanceFromPlayer <= shootingRange)
+        } 
+    else if (distanceFromPlayer <= shootingRange)
         {
             CheckIfTimeToFire();
         }
+    else
+        {
+            IsShooting = false; 
+        }
+    
         
     }
 
 
-    void CheckIfTimeToFire()
+    public void CheckIfTimeToFire()
     {
         if (Time.time > nextFire)
         {
@@ -49,13 +59,13 @@ public class FlyingShootingEnemy : MonoBehaviour
             tempObject.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position, Quaternion.identity);
 
             nextFire = Time.time + fireRate;
+            IsShooting = true; 
+           
         }
+   
+
+
     }
 
-    private void OnDrawGizmoSelected()
-    {
-        Gizmos.color = Color.red; 
-        Gizmos.DrawWireSphere(transform.position, LineofSite);
-      
-    }
+    
 }
