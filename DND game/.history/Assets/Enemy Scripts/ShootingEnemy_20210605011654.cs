@@ -46,7 +46,7 @@ public class ShootingEnemy : MonoBehaviour
         if (Time.time > nextFire)
         {
             GameObject tempObject = BPS.instance.GetPooledObject("EBullet");
-            //tempObject.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position, Quaternion.identity);
+            tempObject.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position, Quaternion.identity);
             
             nextFire = Time.time + fireRate; 
         }
