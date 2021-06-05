@@ -25,6 +25,7 @@ public class movement : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         left.cont.shoot.performed += ctx => shoot();
         gunCooldown = gun.fireRate;
+        GunSprite.GetComponent<SpriteRenderer>().sprite=gun.GunSprite;
         Debug.Log("working");
 
     }
@@ -55,7 +56,7 @@ public class movement : MonoBehaviour
 
         //Bulletstuff
         GameObject tempObject = BPS.instance.GetPooledObject("Bullet");
-        tempObject.GetComponent<gun>().WakeUp((Vector2)transform.position, power);
+        tempObject.GetComponent<gun>().WakeUp((Vector2)transform.position, power, gun.damage);
     }
 
 
