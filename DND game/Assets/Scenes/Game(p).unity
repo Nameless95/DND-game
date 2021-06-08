@@ -566,7 +566,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 3.9997559, y: 4.500046}
+  m_AnchoredPosition: {x: 3.9997559, y: 4.5000763}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &303920451
@@ -3160,12 +3160,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cm: {fileID: 519420031}
-  gun: {fileID: 11400000, guid: e7a8e646912e1874493f925b5a4a0f1d, type: 2}
+  gun: {fileID: 11400000, guid: 008487efe2a5929499bfd18727d2d1d3, type: 2}
   slideCooldown: {fileID: 1932319979}
   bulletPrefab: {fileID: 6158637966996720353, guid: 4d76c3a1bf6a8465ebba5e727cffd444,
     type: 3}
-  GunSprite: {fileID: 0}
-  cam: {fileID: 0}
+  GunSprite: {fileID: 4748625081288368435, guid: 6a5d18fd816d79841850870e6da89abe,
+    type: 3}
+  cam: {fileID: 519420031}
 --- !u!4 &1809482914
 Transform:
   m_ObjectHideFlags: 0
