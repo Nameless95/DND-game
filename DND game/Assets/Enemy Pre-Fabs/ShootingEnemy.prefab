@@ -184,9 +184,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52308a17ba045447a1b3d17b92956ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 4934730836572146818, guid: 8d5be0e3963e41848a9f92dea4932886, type: 3}
   speed: 2
   StopMoving: {fileID: 3865537868370780484}
   damage: 0
   shootingRange: 10
   bullet: {fileID: 396643059264816569, guid: b2b4463742c88e54e80072ecb686e7ed, type: 3}
+  BulletType: 1
+  offset: {x: 0, y: 0}
+  IsShooting: 0

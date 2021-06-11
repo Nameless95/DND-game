@@ -137,8 +137,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02df126929c9b74da51de6df7464835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 4934730836572146818, guid: 8d5be0e3963e41848a9f92dea4932886, type: 3}
   moveSpeed: 1
   LineofSite: 10
   shootingRange: 5
   bullet: {fileID: 396643059264816569, guid: b2b4463742c88e54e80072ecb686e7ed, type: 3}
+  fireRate: 0
+  IsShooting: 0

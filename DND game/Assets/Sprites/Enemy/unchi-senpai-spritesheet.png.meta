@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: fea4bc4e0f9a6b44387bcb7675c04e2c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1906099048790851462
+    second: unchi-senpai-idle0
+  - first:
+      213: 6877344112067617840
+    second: unchi-senpai-idle1
+  - first:
+      213: -5511002890132978632
+    second: unchi-senpai-idle2
+  - first:
+      213: 3632508484623901716
+    second: unchi-senpai-idle3
+  - first:
+      213: -8802094629176795987
+    second: unchi-senpai-idle4
+  - first:
+      213: 2766411646881827507
+    second: unchi-senpai-idle5
+  - first:
+      213: -4492846331376498490
+    second: unchi-senpai-idle6
+  - first:
+      213: 7730809452709309807
+    second: unchi-senpai-idle7
+  - first:
+      213: 8430581949030753292
+    second: unchi-senpai-attack0
+  - first:
+      213: -5211863015248690784
+    second: unchi-senpai-attack1
+  - first:
+      213: 6099699369538200036
+    second: unchi-senpai-attack2
+  - first:
+      213: 5724086410614473365
+    second: unchi-senpai-attack3
+  - first:
+      213: -5846731997381875134
+    second: unchi-senpai-attack4
+  - first:
+      213: 6377136598800246146
+    second: unchi-senpai-attack5
+  - first:
+      213: -7324898316784992635
+    second: unchi-senpai-attack6
+  - first:
+      213: 8067370563881396953
+    second: unchi-senpai-attack7
+  - first:
+      213: 6329836547525551210
+    second: unchi-senpai-attack8
+  - first:
+      213: -4335814336207014400
+    second: unchi-senpai-attack9
+  - first:
+      213: 6378027897624549744
+    second: unchi-senpai-attack10
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: unchi-senpai-idle0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 25
+        width: 12
+        height: 5
+      alignment: 9
+      pivot: {x: 0.6183725, y: 0.3553215}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f73e56cf2d37a10800000000000000
+      internalID: 1906099048790851462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-idle1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 23
+        width: 31
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0342aed380c317f50800000000000000
+      internalID: 6877344112067617840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-idle2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 22
+        width: 35
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8340979e11cf483b0800000000000000
+      internalID: -5511002890132978632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-idle3
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 23
+        width: 41
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 414a99d8833496230800000000000000
+      internalID: 3632508484623901716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-idle4
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 23
+        width: 44
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dac1b8cf19da8d580800000000000000
+      internalID: -8802094629176795987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-idle5
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 23
+        width: 42
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ba05ea5cb4446620800000000000000
+      internalID: 2766411646881827507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-idle6
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 23
+        width: 41
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c803e3d01436a1c0800000000000000
+      internalID: -4492846331376498490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-idle7
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 23
+        width: 39
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6d68f6dc3a594b60800000000000000
+      internalID: 7730809452709309807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-attack0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 3
+        width: 11
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c046cc19d917ff470800000000000000
+      internalID: 8430581949030753292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-attack1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1
+        width: 31
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a10b16833ebba7b0800000000000000
+      internalID: -5211863015248690784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-attack2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 0
+        width: 35
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e1affd424c76a450800000000000000
+      internalID: 6099699369538200036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-attack3
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1
+        width: 41
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5920150534a007f40800000000000000
+      internalID: 5724086410614473365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-attack4
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1
+        width: 47
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24aa427c93c3cdea0800000000000000
+      internalID: -5846731997381875134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-attack5
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 1
+        width: 48
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 285a1a7f2f3208850800000000000000
+      internalID: 6377136598800246146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-attack6
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 1
+        width: 48
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e7c243acbb85a90800000000000000
+      internalID: -7324898316784992635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-attack7
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 1
+        width: 48
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dae79bf8ce05ff60800000000000000
+      internalID: 8067370563881396953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-attack8
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 0
+        width: 39
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a64ab859dc818d750800000000000000
+      internalID: 6329836547525551210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-attack9
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 1
+        width: 37
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 006b55655d714d3c0800000000000000
+      internalID: -4335814336207014400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unchi-senpai-attack10
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 1
+        width: 37
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0795175a49e438850800000000000000
+      internalID: 6378027897624549744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
