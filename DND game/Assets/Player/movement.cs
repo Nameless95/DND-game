@@ -49,7 +49,7 @@ public class movement : MonoBehaviour
         gunCooldown = gun.fireRate;
         Vector2 power;
         power = this.transform.position - cm.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        Debug.Log(gun.gunName + " was used");
+        //Debug.Log(gun.gunName + " was used");
         power.Normalize();
         power *= gun.knockBack;
         rb.velocity = power;

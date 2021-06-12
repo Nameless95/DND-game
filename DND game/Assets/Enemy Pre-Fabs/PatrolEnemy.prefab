@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  distance: 1
   groundDetection: {fileID: 5028258253034193776}
 --- !u!61 &5028258254330561796
 BoxCollider2D:
