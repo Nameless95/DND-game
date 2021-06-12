@@ -44,11 +44,12 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4934730836572146818, guid: 8d5be0e3963e41848a9f92dea4932886,
+        type: 3}
     - target: {fileID: 6639172589190768388, guid: e39f0c26cca3c5d4b8a1d565997b4fdb,
         type: 3}
       propertyPath: fireRate
-      value: 1.75
+      value: 1.85
       objectReference: {fileID: 0}
     - target: {fileID: 8927933924313100904, guid: e39f0c26cca3c5d4b8a1d565997b4fdb,
         type: 3}
@@ -83,7 +84,7 @@ PrefabInstance:
     - target: {fileID: 8927933924313100916, guid: e39f0c26cca3c5d4b8a1d565997b4fdb,
         type: 3}
       propertyPath: m_Name
-      value: CloudEnemy
+      value: CloudEnemy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8927933924313100918, guid: e39f0c26cca3c5d4b8a1d565997b4fdb,
         type: 3}
