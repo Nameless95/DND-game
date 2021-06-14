@@ -1304,7 +1304,7 @@ GameObject:
   - component: {fileID: 461122430}
   - component: {fileID: 461122431}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: VolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2663,6 +2663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Musi: {fileID: 935218347}
+  volumer: {fileID: 461122431}
 --- !u!1 &1107412719
 GameObject:
   m_ObjectHideFlags: 0
