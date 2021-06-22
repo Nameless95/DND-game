@@ -16,9 +16,16 @@ public class FlyingShootingEnemy : MonoBehaviour
 
     public float fireRate;
     private float nextFire;
-    [HideInInspector]
-    public bool IsShooting; 
 
+    public int BulletType; //change this in order to choose which bullet type the enemy shoots 
+
+    [HideInInspector]
+    public bool IsShooting;
+
+    [SerializeField]
+    private Vector2 offset;
+
+  
 
     void Start()
     {
@@ -27,8 +34,7 @@ public class FlyingShootingEnemy : MonoBehaviour
         
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
-
-    // Update is called once per frame
+  
     void Update()
     {
         
@@ -46,8 +52,10 @@ public class FlyingShootingEnemy : MonoBehaviour
         {
             IsShooting = false; 
         }
-    
-        
+       
+  
+
+
     }
 
 
@@ -55,8 +63,21 @@ public class FlyingShootingEnemy : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
-            GameObject tempObject = BPS.instance.GetPooledObject("EBullet");
-            tempObject.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position, Quaternion.identity);
+            switch (BulletType)
+            { //this switch statement is made in order to make sure that the right bullet is being used by the BPS 
+                case 1:
+                    GameObject tempObject = BPS.instance.GetPooledObject("EBullet");
+                    tempObject.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position + offset, Quaternion.identity);
+                    break;
+                case 2:
+                    GameObject tempObject2 = BPS.instance.GetPooledObject("BookBullet");
+                    tempObject2.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position + offset, Quaternion.identity);
+                    break;
+                case 3:
+                    GameObject tempObject3 = BPS.instance.GetPooledObject("LightingBullet");
+                    tempObject3.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position + offset, Quaternion.identity);
+                    break;
+            }
 
             nextFire = Time.time + fireRate;
             IsShooting = true; 

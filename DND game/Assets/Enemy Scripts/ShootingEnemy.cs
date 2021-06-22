@@ -16,7 +16,7 @@ public class ShootingEnemy : MonoBehaviour
 
     public float shootingRange;
     public GameObject bullet;
-    public int BulletType;
+    public int BulletType; //change this in order to choose which bullet type the enemy shoots 
 
     [SerializeField]
     private Vector2 offset; 
@@ -67,6 +67,10 @@ public class ShootingEnemy : MonoBehaviour
                     GameObject tempObject2 = BPS.instance.GetPooledObject("BookBullet");
                     tempObject2.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position + offset, Quaternion.identity);
               break;
+                case 3:
+                    GameObject tempObject3 = BPS.instance.GetPooledObject("LightingBullet");
+                    tempObject3.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position + offset, Quaternion.identity);
+              break; 
             } 
 
             nextFire = Time.time + fireRate;

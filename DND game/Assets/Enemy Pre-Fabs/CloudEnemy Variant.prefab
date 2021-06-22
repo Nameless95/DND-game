@@ -42,6 +42,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6639172589190768388, guid: e39f0c26cca3c5d4b8a1d565997b4fdb,
         type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 8876368797594505766, guid: deead6ea5fc40c444ab3dc4df253a2b6,
+        type: 3}
+    - target: {fileID: 6639172589190768388, guid: e39f0c26cca3c5d4b8a1d565997b4fdb,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 4934730836572146818, guid: 8d5be0e3963e41848a9f92dea4932886,
@@ -50,6 +56,11 @@ PrefabInstance:
         type: 3}
       propertyPath: fireRate
       value: 1.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639172589190768388, guid: e39f0c26cca3c5d4b8a1d565997b4fdb,
+        type: 3}
+      propertyPath: BulletType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8927933924313100904, guid: e39f0c26cca3c5d4b8a1d565997b4fdb,
         type: 3}
