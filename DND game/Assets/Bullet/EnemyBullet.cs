@@ -34,7 +34,7 @@ public class EnemyBullet : MonoBehaviour
             gameObject.SetActive(false);
 
         }
-        if (collision.gameObject.CompareTag("Player"))
+        else if (collision.gameObject.CompareTag("Player"))
         {
             gameObject.SetActive(false);
             //make a line here to make sure the player takes damage 

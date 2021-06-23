@@ -6,7 +6,8 @@ public class PatrolEnemy : MonoBehaviour
 {
     private GameObject player;
     public Patrol PatrolScript;
-   
+    [HideInInspector]
+    public bool IsAttacking;
 
     void Start()
     {
@@ -19,8 +20,12 @@ public class PatrolEnemy : MonoBehaviour
 
         if ((player.transform.position - this.transform.position).sqrMagnitude < 7 * 7)
         {
-            transform.Translate(Vector2.right * PatrolScript.speed * 3 * Time.deltaTime);
-
+            transform.Translate(Vector2.right * PatrolScript.speed * 3 * Time.deltaTime * PatrolScript.distance);
+            IsAttacking = true; 
+        }
+        else
+        {
+            IsAttacking = false; 
         }
         
     }

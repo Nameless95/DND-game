@@ -10,6 +10,7 @@ TagManager:
   - Platform
   - Enemy
   - EBullet
+  - BookBullet
   layers:
   - Default
   - TransparentFX
