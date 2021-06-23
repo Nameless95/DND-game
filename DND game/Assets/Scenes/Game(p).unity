@@ -971,7 +971,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Musi: {fileID: 1719318795}
+  Steps: {fileID: 1719318795}
   volumer: {fileID: 1194512161}
+  firstPlay: 0
 --- !u!4 &592970727
 Transform:
   m_ObjectHideFlags: 0
