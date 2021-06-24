@@ -25,6 +25,22 @@ public class @Control : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Holdback"",
+                    ""type"": ""Button"",
+                    ""id"": ""99b009cf-d409-498a-95af-e8c16a03e3b7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""reload"",
+                    ""type"": ""Button"",
+                    ""id"": ""2487bf00-9b82-4e8a-8f64-04afaf63088d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -49,6 +65,39 @@ public class @Control : IInputActionCollection, IDisposable
                     ""action"": ""shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f81eecd9-201b-4095-91db-0c039622aa72"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Holdback"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d00ba9f8-d6d8-492c-be7a-fc75bb170f05"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Holdback"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f4dc1d8c-c213-4e72-8523-180c43ecda18"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -58,6 +107,8 @@ public class @Control : IInputActionCollection, IDisposable
         // cont
         m_cont = asset.FindActionMap("cont", throwIfNotFound: true);
         m_cont_shoot = m_cont.FindAction("shoot", throwIfNotFound: true);
+        m_cont_Holdback = m_cont.FindAction("Holdback", throwIfNotFound: true);
+        m_cont_reload = m_cont.FindAction("reload", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -108,11 +159,15 @@ public class @Control : IInputActionCollection, IDisposable
     private readonly InputActionMap m_cont;
     private IContActions m_ContActionsCallbackInterface;
     private readonly InputAction m_cont_shoot;
+    private readonly InputAction m_cont_Holdback;
+    private readonly InputAction m_cont_reload;
     public struct ContActions
     {
         private @Control m_Wrapper;
         public ContActions(@Control wrapper) { m_Wrapper = wrapper; }
         public InputAction @shoot => m_Wrapper.m_cont_shoot;
+        public InputAction @Holdback => m_Wrapper.m_cont_Holdback;
+        public InputAction @reload => m_Wrapper.m_cont_reload;
         public InputActionMap Get() { return m_Wrapper.m_cont; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -125,6 +180,12 @@ public class @Control : IInputActionCollection, IDisposable
                 @shoot.started -= m_Wrapper.m_ContActionsCallbackInterface.OnShoot;
                 @shoot.performed -= m_Wrapper.m_ContActionsCallbackInterface.OnShoot;
                 @shoot.canceled -= m_Wrapper.m_ContActionsCallbackInterface.OnShoot;
+                @Holdback.started -= m_Wrapper.m_ContActionsCallbackInterface.OnHoldback;
+                @Holdback.performed -= m_Wrapper.m_ContActionsCallbackInterface.OnHoldback;
+                @Holdback.canceled -= m_Wrapper.m_ContActionsCallbackInterface.OnHoldback;
+                @reload.started -= m_Wrapper.m_ContActionsCallbackInterface.OnReload;
+                @reload.performed -= m_Wrapper.m_ContActionsCallbackInterface.OnReload;
+                @reload.canceled -= m_Wrapper.m_ContActionsCallbackInterface.OnReload;
             }
             m_Wrapper.m_ContActionsCallbackInterface = instance;
             if (instance != null)
@@ -132,6 +193,12 @@ public class @Control : IInputActionCollection, IDisposable
                 @shoot.started += instance.OnShoot;
                 @shoot.performed += instance.OnShoot;
                 @shoot.canceled += instance.OnShoot;
+                @Holdback.started += instance.OnHoldback;
+                @Holdback.performed += instance.OnHoldback;
+                @Holdback.canceled += instance.OnHoldback;
+                @reload.started += instance.OnReload;
+                @reload.performed += instance.OnReload;
+                @reload.canceled += instance.OnReload;
             }
         }
     }
@@ -139,5 +206,7 @@ public class @Control : IInputActionCollection, IDisposable
     public interface IContActions
     {
         void OnShoot(InputAction.CallbackContext context);
+        void OnHoldback(InputAction.CallbackContext context);
+        void OnReload(InputAction.CallbackContext context);
     }
 }
