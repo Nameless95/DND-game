@@ -25,7 +25,7 @@ public class movement : MonoBehaviour
     {
         left = new Control();
         rb = this.GetComponent<Rigidbody2D>();
-
+        gun.ammo = gun.magSize;
         left.cont.shoot.performed += ctx => shoot();
         left.cont.Holdback.performed += ctx => knockback = false;
         left.cont.Holdback.canceled += ctx => knockback = true;

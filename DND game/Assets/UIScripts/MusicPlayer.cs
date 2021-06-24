@@ -11,6 +11,12 @@ public class MusicPlayer : MonoBehaviour
     private float musicVolume;
     public bool firstPlay;
 
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
     void Start()
     {
     
