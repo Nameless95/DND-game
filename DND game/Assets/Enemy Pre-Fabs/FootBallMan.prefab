@@ -42,10 +42,10 @@ GameObject:
   - component: {fileID: 1574158998809772076}
   - component: {fileID: 1574158998809772079}
   - component: {fileID: 1574158998809772082}
+  - component: {fileID: 1574158998809772083}
   - component: {fileID: 1574158998809772080}
   - component: {fileID: 5773473405877458145}
   - component: {fileID: 5773473405877458144}
-  - component: {fileID: 1128898906555886053}
   m_Layer: 12
   m_Name: FootBallMan
   m_TagString: Enemy
@@ -128,11 +128,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1574158998809772078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d40263cc0812df0448e7b50419e99b67, type: 3}
+  m_Script: {fileID: 11500000, guid: 63ada09eeaed3ac4bae62f66e43a9a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
-  deathEffect: {fileID: 1266392279119867486, guid: 803d9a010cb921645bca49162800b7b9,
+  speed: 2
+  distance: 1
+  groundDetection: {fileID: 1574158998058403398}
+  playerCharacter: {fileID: 4934730836572146818, guid: 8d5be0e3963e41848a9f92dea4932886,
     type: 3}
 --- !u!61 &1574158998809772082
 BoxCollider2D:
@@ -160,6 +162,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1281815, y: 3.0531015}
   m_EdgeRadius: 0
+--- !u!114 &1574158998809772083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574158998809772078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b2b1507a1c7504487d08e209c5772a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
+  deathEffect: {fileID: 1266392279119867486, guid: 803d9a010cb921645bca49162800b7b9,
+    type: 3}
 --- !u!114 &1574158998809772080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cebf9c272852fdc41a511655d9313aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PatrolScript: {fileID: 1128898906555886053}
+  PatrolScript: {fileID: 1574158998809772079}
   IsAttacking: 0
 --- !u!95 &5773473405877458145
 Animator:
@@ -207,19 +224,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 5773473405877458145}
   Attack: {fileID: 1574158998809772080}
---- !u!114 &1128898906555886053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574158998809772078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e90809785edc1d4387f5602e0ab60ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  distance: 1
-  groundDetection: {fileID: 1574158998058403398}
-  playerCharacter: {fileID: 1574158998809772077}

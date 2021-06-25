@@ -17,7 +17,5 @@ MonoBehaviour:
   bullet: 0
   fireRate: 0.1
   knockBack: 10
-  GunSprite: {fileID: 21300000, guid: 98c100e6faaaa3347b9c82eb417b580e, type: 3}
-  magSize: 10
-  ammo: 6
-  reloadTime: 2
+  GunSprite: {fileID: 21300000, guid: 11cc4feb59756354482cd005ba732aad, type: 3}
+  offset: {x: 0, y: -0.5}

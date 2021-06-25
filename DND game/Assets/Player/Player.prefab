@@ -220,7 +220,6 @@ MonoBehaviour:
     type: 3}
   GunSprite: {fileID: 4934730836571733260}
   cam: {fileID: 4934730834778501215}
-  text: {fileID: 0}
 --- !u!212 &4934730836572146821
 SpriteRenderer:
   m_ObjectHideFlags: 0
