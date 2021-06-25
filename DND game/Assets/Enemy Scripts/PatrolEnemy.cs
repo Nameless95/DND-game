@@ -5,7 +5,7 @@ using UnityEngine;
 public class PatrolEnemy : MonoBehaviour
 {
     private GameObject player;
-    public enemyscript PatrolScript;
+    public Patrol PatrolScript;
     [HideInInspector]
     public bool IsAttacking;
 
