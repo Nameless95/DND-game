@@ -11,9 +11,9 @@ public class Patrol : MonoBehaviour
     //public Transform player; 
 
     private bool movingRight = true;
-   // private bool FoundPlayer = false;
+    // private bool FoundPlayer = false;
     public Transform groundDetection;
-    
+
     public Transform playerCharacter;
     private SpriteRenderer spriteRenderer;
 
@@ -24,7 +24,7 @@ public class Patrol : MonoBehaviour
 
 
 
-void Update()
+    void Update()
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime);
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance, LayerMask.GetMask("Platform"));
@@ -40,16 +40,13 @@ void Update()
                 transform.eulerAngles = new Vector2(0, 0);
                 movingRight = true;
             }
-           
-          
+
+
 
         }
         this.spriteRenderer.flipX = playerCharacter.transform.position.x < this.transform.position.x; //this will flip the sprite towards the player 
 
     }
 }
-
-
-
 
 

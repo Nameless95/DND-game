@@ -43,6 +43,7 @@ public class ShootingEnemy : MonoBehaviour
         }
         else if (distanceFromPlayer > shootingRange)
         {
+            //Debug.Log(StopMoving);
             StopMoving.speed = speed;  //sets speed back to normal 
             transform.Translate(Vector2.right * StopMoving.speed * 1 * Time.deltaTime);
             IsShooting = false;
