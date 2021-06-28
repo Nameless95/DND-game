@@ -66,6 +66,11 @@ PrefabInstance:
       propertyPath: fireRate
       value: 1.85
       objectReference: {fileID: 0}
+    - target: {fileID: 6639172589190768388, guid: e39f0c26cca3c5d4b8a1d565997b4fdb,
+        type: 3}
+      propertyPath: BulletType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8927933924313100904, guid: e39f0c26cca3c5d4b8a1d565997b4fdb,
         type: 3}
       propertyPath: m_Size.x

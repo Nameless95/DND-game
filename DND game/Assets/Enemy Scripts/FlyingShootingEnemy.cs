@@ -16,6 +16,7 @@ public class FlyingShootingEnemy : MonoBehaviour
 
     public float fireRate;
     private float nextFire;
+    public float BulletType; 
     [HideInInspector]
     public bool IsShooting; 
 
@@ -55,8 +56,21 @@ public class FlyingShootingEnemy : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
-            GameObject tempObject = BPS.instance.GetPooledObject("EBullet");
-            tempObject.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position, Quaternion.identity);
+            switch (BulletType)
+            { //this switch statement is made in order to make sure that the right bullet is being used by the BPS 
+                case 1:
+                    GameObject tempObject = BPS.instance.GetPooledObject("EBullet");
+                    tempObject.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position, Quaternion.identity);
+                    break;
+                case 2:
+                    GameObject tempObject2 = BPS.instance.GetPooledObject("BookBullet");
+                    tempObject2.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position, Quaternion.identity);
+                    break;
+                case 3:
+                    GameObject tempObject3 = BPS.instance.GetPooledObject("LightingBullet");
+                    tempObject3.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position, Quaternion.identity);
+                    break;
+            }
 
             nextFire = Time.time + fireRate;
             IsShooting = true; 
