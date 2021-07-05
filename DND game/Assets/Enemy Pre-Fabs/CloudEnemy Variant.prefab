@@ -33,6 +33,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1559044697}
   CloudShot: {fileID: 2310978405959369534}
+--- !u!114 &2349252744700765906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565006370460407374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40263cc0812df0448e7b50419e99b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
+  deathEffect: {fileID: 1266392279119867486, guid: 803d9a010cb921645bca49162800b7b9,
+    type: 3}
 --- !u!1001 &8948981037467657274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44,7 +59,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 8876368797594505766, guid: deead6ea5fc40c444ab3dc4df253a2b6,
+      objectReference: {fileID: 3908037656879755970, guid: 20cd59c42b1733641b4f11e6b02a64ed,
         type: 3}
     - target: {fileID: 6639172589190768388, guid: e39f0c26cca3c5d4b8a1d565997b4fdb,
         type: 3}
@@ -91,6 +106,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 3.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 8927933924313100905, guid: e39f0c26cca3c5d4b8a1d565997b4fdb,
+        type: 3}
+      propertyPath: health
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8927933924313100916, guid: e39f0c26cca3c5d4b8a1d565997b4fdb,
         type: 3}
@@ -183,7 +203,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8927933924313100905, guid: e39f0c26cca3c5d4b8a1d565997b4fdb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e39f0c26cca3c5d4b8a1d565997b4fdb, type: 3}
 --- !u!1 &565006370460407374 stripped
 GameObject:

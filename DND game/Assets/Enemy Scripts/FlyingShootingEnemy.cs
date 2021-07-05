@@ -16,16 +16,12 @@ public class FlyingShootingEnemy : MonoBehaviour
 
     public float fireRate;
     private float nextFire;
-
-    public int BulletType; //change this in order to choose which bullet type the enemy shoots 
-
+    public float BulletType; 
     [HideInInspector]
     public bool IsShooting;
 
     [SerializeField]
-    private Vector2 offset;
-
-  
+    private Vector2 offset; 
 
     void Start()
     {
@@ -34,7 +30,8 @@ public class FlyingShootingEnemy : MonoBehaviour
         
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
-  
+
+    // Update is called once per frame
     void Update()
     {
         
@@ -52,10 +49,8 @@ public class FlyingShootingEnemy : MonoBehaviour
         {
             IsShooting = false; 
         }
-       
-  
-
-
+    
+        
     }
 
 
@@ -63,7 +58,7 @@ public class FlyingShootingEnemy : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
-            Vector2 direction = player.position - transform.position;  
+            Vector2 direction = player.position - transform.position;
             Quaternion Rotation = Quaternion.Euler(0f, 0f, Vector2.SignedAngle(Vector2.down, direction));
 
             switch (BulletType)

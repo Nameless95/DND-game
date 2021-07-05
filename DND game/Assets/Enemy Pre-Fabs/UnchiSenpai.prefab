@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1967343878740859958}
   - component: {fileID: 1967343878740859959}
-  - component: {fileID: 1967343878740859956}
   - component: {fileID: 1967343878740859945}
-  - component: {fileID: 1967343878740859944}
-  - component: {fileID: 6812432105861413878}
   - component: {fileID: 3380038244532839029}
   - component: {fileID: 3380038244532839028}
+  - component: {fileID: 83221834976707085}
+  - component: {fileID: 5174158402922123177}
+  - component: {fileID: -8034093211314491940}
   m_Layer: 12
   m_Name: UnchiSenpai
   m_TagString: Enemy
@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1967343878740859957}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 18.81, y: -0.48, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 0}
   m_Children:
   - {fileID: 1967343879491967581}
   m_Father: {fileID: 0}
@@ -89,21 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1967343878740859956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967343878740859957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63ada09eeaed3ac4bae62f66e43a9a0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  distance: 1
-  groundDetection: {fileID: 1967343879491967581}
 --- !u!61 &1967343878740859945
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -130,42 +115,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.644711, y: 0.30425587}
   m_EdgeRadius: 0
---- !u!114 &1967343878740859944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967343878740859957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82b2b1507a1c7504487d08e209c5772a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 20
-  deathEffect: {fileID: 1266392279119867486, guid: 803d9a010cb921645bca49162800b7b9,
-    type: 3}
---- !u!114 &6812432105861413878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967343878740859957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a52308a17ba045447a1b3d17b92956ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 4934730836572146818, guid: 8d5be0e3963e41848a9f92dea4932886, type: 3}
-  speed: 2
-  StopMoving: {fileID: 1967343878740859956}
-  damage: 0
-  shootingRange: 10
-  bullet: {fileID: 2699470765259262124, guid: 4ba0058d46c616d4cb3e80428bf70494, type: 3}
-  BulletType: 2
-  offset: {x: 0, y: 0.25}
-  IsShooting: 0
 --- !u!95 &3380038244532839029
 Animator:
   serializedVersion: 3
@@ -198,7 +147,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 3380038244532839029}
-  Shooting: {fileID: 6812432105861413878}
+  Shooting: {fileID: -8034093211314491940}
+--- !u!114 &83221834976707085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967343878740859957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40263cc0812df0448e7b50419e99b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
+  deathEffect: {fileID: 1266392279119867486, guid: 803d9a010cb921645bca49162800b7b9,
+    type: 3}
+--- !u!114 &5174158402922123177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967343878740859957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e90809785edc1d4387f5602e0ab60ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  distance: 1
+  groundDetection: {fileID: 1967343879491967581}
+  playerCharacter: {fileID: 4934730836572146818, guid: 8d5be0e3963e41848a9f92dea4932886,
+    type: 3}
+--- !u!114 &-8034093211314491940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967343878740859957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a52308a17ba045447a1b3d17b92956ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  StopMoving: {fileID: 5174158402922123177}
+  damage: 0
+  bullet: {fileID: 2699470765259262124, guid: 4ba0058d46c616d4cb3e80428bf70494, type: 3}
+  BulletType: 2
+  offset: {x: 0, y: 0.25}
+  IsShooting: 0
 --- !u!1 &1967343879491967578
 GameObject:
   m_ObjectHideFlags: 0
