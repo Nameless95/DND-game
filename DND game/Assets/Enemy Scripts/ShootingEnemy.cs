@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class ShootingEnemy : MonoBehaviour
 {
-    // public Transform player;
-
-    private GameObject player; 
+    public Transform player;
+   
    
     public float speed; 
     public Patrol StopMoving;
@@ -15,39 +14,41 @@ public class ShootingEnemy : MonoBehaviour
     private float nextFire;
     
 
-  
+    public float shootingRange;
     public GameObject bullet;
-    public int BulletType;
+    public int BulletType; //change this in order to choose which bullet type the enemy shoots 
 
     [SerializeField]
     private Vector2 offset; 
     [HideInInspector]
     public bool IsShooting;
-   
 
 
     private void Start()
     {
         fireRate = 1f;
-        nextFire = Time.time;
-        player = GameObject.Find("Player");
+        nextFire = Time.time; 
     }
 
     private void Update()
     {
-
-        if ((player.transform.position - this.transform.position).sqrMagnitude < 8 * 8)
+        float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
+       
+        if ((distanceFromPlayer < shootingRange))
         {
-            CheckIfTimeToFire();
-            StopMoving.speed = 0;  
+            CheckIfTimeToFire(); 
+            StopMoving.speed = 0;  //makes the enemy stop moving 
+          //  Debug.Log("Shoot"); 
+
         }
-        else
+        else if (distanceFromPlayer > shootingRange)
         {
             StopMoving.speed = speed;  //sets speed back to normal 
             transform.Translate(Vector2.right * StopMoving.speed * 1 * Time.deltaTime);
             IsShooting = false;
+
         }
-       
+      
 
 
 
@@ -57,29 +58,27 @@ public class ShootingEnemy : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
-            switch (BulletType)
-            { //this switch statement is made in order to make sure that the right bullet is being used by the BPS 
-                case 1:
+            switch (BulletType) { //this switch statement is made in order to make sure that the right bullet is being used by the BPS 
+                case 1: 
                     GameObject tempObject = BPS.instance.GetPooledObject("EBullet");
                     tempObject.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position + offset, Quaternion.identity);
-                    break;
+              break;
                 case 2:
                     GameObject tempObject2 = BPS.instance.GetPooledObject("BookBullet");
                     tempObject2.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position + offset, Quaternion.identity);
-                    break;
+              break;
                 case 3:
                     GameObject tempObject3 = BPS.instance.GetPooledObject("LightingBullet");
                     tempObject3.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position + offset, Quaternion.identity);
-                    break;
-            }
+              break; 
+            } 
 
             nextFire = Time.time + fireRate;
             IsShooting = true;
         }
     }
 
-
-
+   
 
 }
 
