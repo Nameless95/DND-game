@@ -59,7 +59,8 @@ public class FlyingShootingEnemy : MonoBehaviour
         if (Time.time > nextFire)
         {
             Vector2 direction = player.position - transform.position;
-            Quaternion Rotation = Quaternion.Euler(0f, 0f, Vector2.SignedAngle(Vector2.down, direction));
+            Quaternion Rotation = Quaternion.Euler(0f, 0f, Vector2.SignedAngle(Vector2.down, direction * 5f));
+          
 
             switch (BulletType)
             { //this switch statement is made in order to make sure that the right bullet is being used by the BPS 
@@ -72,12 +73,12 @@ public class FlyingShootingEnemy : MonoBehaviour
                     tempObject2.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position + offset, Quaternion.identity);
                     break;
                 case 3:
-                    GameObject tempObject3 = BPS.instance.GetPooledObject("LightingBullet");
-                    tempObject3.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position + offset, Rotation);
+                    GameObject tempObject3 = BPS.instance.GetPooledObject("LightingBullet"); 
+                        tempObject3.GetComponent<EnemyBullet>().WakeUp((Vector2)transform.position + offset, Rotation);
                     break;
             }
 
-            nextFire = Time.time + fireRate;
+            nextFire = Time.time + fireRate * (1/2f);
             IsShooting = true; 
            
         }
