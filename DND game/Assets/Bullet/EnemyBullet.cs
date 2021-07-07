@@ -11,6 +11,7 @@ public class EnemyBullet : MonoBehaviour
 
     Vector2 moveDirection;
 
+    public int damage; 
         
 
   
@@ -39,7 +40,7 @@ public class EnemyBullet : MonoBehaviour
             gameObject.SetActive(false);
             //make a line here to make sure the player takes damage 
 
-            // collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage); 
 
         }
         Debug.Log("Help!" + collision.gameObject.tag+collision.gameObject.name);

@@ -5,7 +5,7 @@ using UnityEngine;
 public class gun : MonoBehaviour
 {
     Rigidbody2D rb;
-    int damage; 
+    public int damage; 
     private void Awake(){
         rb = this.GetComponent<Rigidbody2D>();
     }
