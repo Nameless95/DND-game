@@ -12,25 +12,34 @@ public class movement : MonoBehaviour
     Control left;
     Rigidbody2D rb;
     public Camera cm;
-    public GunTemplate gun;
+   public List<GunTemplate> guns;
+   GunTemplate gun; 
+    private int select_gun_index = 0;
     float gunCooldown;
     public Slider slideCooldown; 
     public GameObject bulletPrefab;
     public GameObject GunSprite;
     public Camera cam;
 
-    public bool ishold = false;
+    bool ishold = false;
 
     void weaponswitch(bool isLeft) {
-        Debug.Log(ishold);
-        if (isLeft) {
-            //Debug.Log("Left");
-            
+        Debug.Log(select_gun_index.ToString());
+        if (isLeft)
+        {
+            select_gun_index--;
         }
-        else {
-            //Debug.Log("Right");
-            
+        else
+        {
+            select_gun_index++;
+
         }
+
+        if (select_gun_index < 0)
+            select_gun_index = guns.Count-1;
+        select_gun_index%= guns.Count;
+        gun = guns[select_gun_index];
+
     }
     void Awake()
     {
@@ -44,8 +53,11 @@ public class movement : MonoBehaviour
          left.cont.hold.started += ctx => ishold = true;
          left.cont.hold.canceled += ctx => ishold = false;
         
+        gun = guns[0];
         gunCooldown = gun.fireRate;
         GunSprite.GetComponent<SpriteRenderer>().sprite=gun.GunSprite;
+        
+        Debug.Log(gun.ToString());
         Debug.Log("working");
 
     }
@@ -63,7 +75,7 @@ public class movement : MonoBehaviour
 
     void shoot()
     {
-       // Debug.Log(  gunCooldown/gun.fireRate);
+       Debug.Log(  gunCooldown/gun.fireRate);
         if (gunCooldown > 0) 
             return;
         gunCooldown = gun.fireRate;
