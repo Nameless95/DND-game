@@ -25,6 +25,30 @@ public class @Control : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""hold"",
+                    ""type"": ""Button"",
+                    ""id"": ""ef9ae089-475c-4285-9b34-a2b93bbad79c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""wpn_right"",
+                    ""type"": ""Button"",
+                    ""id"": ""5f573e20-3c06-4435-b35f-0d0c9a49d068"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""wpn_left"",
+                    ""type"": ""Button"",
+                    ""id"": ""fc29262d-8cbd-4189-bd90-e6f982de119a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -49,6 +73,39 @@ public class @Control : IInputActionCollection, IDisposable
                     ""action"": ""shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""00f04636-8a26-49f0-8159-99c1457992d0"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""hold"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4057c289-2946-4a49-a383-7b08ee0046dd"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""wpn_right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""45730f09-9dde-444e-9908-3b11c6efce58"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""wpn_left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -58,6 +115,9 @@ public class @Control : IInputActionCollection, IDisposable
         // cont
         m_cont = asset.FindActionMap("cont", throwIfNotFound: true);
         m_cont_shoot = m_cont.FindAction("shoot", throwIfNotFound: true);
+        m_cont_hold = m_cont.FindAction("hold", throwIfNotFound: true);
+        m_cont_wpn_right = m_cont.FindAction("wpn_right", throwIfNotFound: true);
+        m_cont_wpn_left = m_cont.FindAction("wpn_left", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -108,11 +168,17 @@ public class @Control : IInputActionCollection, IDisposable
     private readonly InputActionMap m_cont;
     private IContActions m_ContActionsCallbackInterface;
     private readonly InputAction m_cont_shoot;
+    private readonly InputAction m_cont_hold;
+    private readonly InputAction m_cont_wpn_right;
+    private readonly InputAction m_cont_wpn_left;
     public struct ContActions
     {
         private @Control m_Wrapper;
         public ContActions(@Control wrapper) { m_Wrapper = wrapper; }
         public InputAction @shoot => m_Wrapper.m_cont_shoot;
+        public InputAction @hold => m_Wrapper.m_cont_hold;
+        public InputAction @wpn_right => m_Wrapper.m_cont_wpn_right;
+        public InputAction @wpn_left => m_Wrapper.m_cont_wpn_left;
         public InputActionMap Get() { return m_Wrapper.m_cont; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -125,6 +191,15 @@ public class @Control : IInputActionCollection, IDisposable
                 @shoot.started -= m_Wrapper.m_ContActionsCallbackInterface.OnShoot;
                 @shoot.performed -= m_Wrapper.m_ContActionsCallbackInterface.OnShoot;
                 @shoot.canceled -= m_Wrapper.m_ContActionsCallbackInterface.OnShoot;
+                @hold.started -= m_Wrapper.m_ContActionsCallbackInterface.OnHold;
+                @hold.performed -= m_Wrapper.m_ContActionsCallbackInterface.OnHold;
+                @hold.canceled -= m_Wrapper.m_ContActionsCallbackInterface.OnHold;
+                @wpn_right.started -= m_Wrapper.m_ContActionsCallbackInterface.OnWpn_right;
+                @wpn_right.performed -= m_Wrapper.m_ContActionsCallbackInterface.OnWpn_right;
+                @wpn_right.canceled -= m_Wrapper.m_ContActionsCallbackInterface.OnWpn_right;
+                @wpn_left.started -= m_Wrapper.m_ContActionsCallbackInterface.OnWpn_left;
+                @wpn_left.performed -= m_Wrapper.m_ContActionsCallbackInterface.OnWpn_left;
+                @wpn_left.canceled -= m_Wrapper.m_ContActionsCallbackInterface.OnWpn_left;
             }
             m_Wrapper.m_ContActionsCallbackInterface = instance;
             if (instance != null)
@@ -132,6 +207,15 @@ public class @Control : IInputActionCollection, IDisposable
                 @shoot.started += instance.OnShoot;
                 @shoot.performed += instance.OnShoot;
                 @shoot.canceled += instance.OnShoot;
+                @hold.started += instance.OnHold;
+                @hold.performed += instance.OnHold;
+                @hold.canceled += instance.OnHold;
+                @wpn_right.started += instance.OnWpn_right;
+                @wpn_right.performed += instance.OnWpn_right;
+                @wpn_right.canceled += instance.OnWpn_right;
+                @wpn_left.started += instance.OnWpn_left;
+                @wpn_left.performed += instance.OnWpn_left;
+                @wpn_left.canceled += instance.OnWpn_left;
             }
         }
     }
@@ -139,5 +223,8 @@ public class @Control : IInputActionCollection, IDisposable
     public interface IContActions
     {
         void OnShoot(InputAction.CallbackContext context);
+        void OnHold(InputAction.CallbackContext context);
+        void OnWpn_right(InputAction.CallbackContext context);
+        void OnWpn_left(InputAction.CallbackContext context);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
-
+using UnityEditor.PackageManager;
 
 
 public class movement : MonoBehaviour
@@ -17,13 +17,33 @@ public class movement : MonoBehaviour
     public Slider slideCooldown; 
     public GameObject bulletPrefab;
     public GameObject GunSprite;
-    public Camera cam; 
+    public Camera cam;
 
+    public bool ishold = false;
+
+    void weaponswitch(bool isLeft) {
+        Debug.Log(ishold);
+        if (isLeft) {
+            //Debug.Log("Left");
+            
+        }
+        else {
+            //Debug.Log("Right");
+            
+        }
+    }
     void Awake()
     {
         left = new Control();
         rb = this.GetComponent<Rigidbody2D>();
         left.cont.shoot.performed += ctx => shoot();
+        
+        left.cont.wpn_left.performed += ctx => weaponswitch(true);
+        left.cont.wpn_right.performed += ctx => weaponswitch(false);
+
+         left.cont.hold.started += ctx => ishold = true;
+         left.cont.hold.canceled += ctx => ishold = false;
+        
         gunCooldown = gun.fireRate;
         GunSprite.GetComponent<SpriteRenderer>().sprite=gun.GunSprite;
         Debug.Log("working");
@@ -52,7 +72,8 @@ public class movement : MonoBehaviour
         //Debug.Log(gun.gunName + " was used");
         power.Normalize();
         power *= gun.knockBack;
-        rb.velocity = power;
+        if(!ishold)
+            rb.velocity = power;
 
         //Bulletstuff
         GameObject tempObject = BPS.instance.GetPooledObject("Bullet");
