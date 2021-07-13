@@ -18,6 +18,7 @@ public class MusicPlayer : MonoBehaviour
         Debug.Log(PlayerPrefs.GetFloat("volume"));
         volumer.value = musicVolume;
         Musi.volume = musicVolume;
+        Steps.volume = musicVolume;
         Steps.Play();
     }
 

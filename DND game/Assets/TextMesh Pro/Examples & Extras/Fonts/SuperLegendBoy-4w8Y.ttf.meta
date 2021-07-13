@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: fdd8588879c442945bdb901600a94c1d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Super Legend Boy
+  fontNames:
+  - Super Legend Boy
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 8a069f4d8bdf31740bdddadfcdad3310, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

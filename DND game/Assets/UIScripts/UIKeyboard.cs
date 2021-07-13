@@ -7,6 +7,7 @@ public class UIKeyboard : MonoBehaviour
     public static bool curPaus = false;
     public GameObject pauseMenu;
     public GameObject headMenu;
+    public GameObject playButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,7 @@ public class UIKeyboard : MonoBehaviour
     void Resume(){
         pauseMenu.SetActive(false);
         headMenu.SetActive(true);
+        //playButton.SetActive(true);
         Time.timeScale = 1f;
         curPaus = false;
     }
