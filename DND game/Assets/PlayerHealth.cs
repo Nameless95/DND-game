@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Instantiate(deathEffect, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
+            FindObjectOfType<LevelManager>().Restart(); 
         }
     }
 
