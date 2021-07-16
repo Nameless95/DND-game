@@ -20,6 +20,7 @@ public class movement : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject GunSprite;
     public Camera cam;
+    public SpriteRenderer sprite;
 
     bool ishold = false;
 
@@ -31,7 +32,7 @@ public class movement : MonoBehaviour
         }
         else
         {
-            select_gun_index++;
+        select_gun_index++;
 
         }
 
@@ -39,6 +40,8 @@ public class movement : MonoBehaviour
             select_gun_index = guns.Count-1;
         select_gun_index%= guns.Count;
         gun = guns[select_gun_index];
+        sprite.sprite = gun.GunSprite;
+        sprite.size = new Vector2(gun.GunSprite.rect.width, gun.GunSprite.rect.height);
 
     }
     void Awake()

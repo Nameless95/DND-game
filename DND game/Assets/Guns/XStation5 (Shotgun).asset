@@ -17,3 +17,4 @@ MonoBehaviour:
   bullet: 0
   fireRate: 3
   knockBack: 500
+  GunSprite: {fileID: 21300000, guid: f90cd5e9237b195a7982b81237987980, type: 3}
