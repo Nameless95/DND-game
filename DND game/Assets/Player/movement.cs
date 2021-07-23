@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Mathematics;
 using UnityEditor.PackageManager;
 
 
@@ -78,24 +81,34 @@ public class movement : MonoBehaviour
 
     void shoot()
     {
-       Debug.Log(  gunCooldown/gun.fireRate);
-        if (gunCooldown > 0) 
+        if (gunCooldown > 0)
             return;
         gunCooldown = gun.fireRate;
-        Vector2 power;
-        power = this.transform.position - cm.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Vector2 trajectory = cm.ScreenToWorldPoint(Mouse.current.position.ReadValue())-  this.transform.position ;
         //Debug.Log(gun.gunName + " was used");
-        power.Normalize();
-        power *= gun.knockBack;
-        if(!ishold)
-            rb.velocity = power;
+        trajectory.Normalize();
+        double trajectory_angle = (double) Mathf.Rad2Deg*Math.Atan2(trajectory.y, trajectory.x); 
+        double[] angels = Enumerable.Range(1, 4).Select(x => (double)((trajectory_angle + x * 30 / 4) * Mathf.Deg2Rad)).ToArray();
+        //double[] angels = {trajectory_angle} ;
+        //Vector2 power = gun.knockBack;
+        //var power = trajectory * gun.knockBack;
+        if (!ishold)
+            rb.velocity = trajectory*gun.knockBack;
 
         //Bulletstuff
-        GameObject tempObject = BPS.instance.GetPooledObject("Bullet");
-        tempObject.GetComponent<gun>().WakeUp((Vector2)transform.position, power, gun.damage);
+        Debug.ClearDeveloperConsole();
+        foreach (double angle in angels)
+        {
+            Debug.Log("ANGLE TO FIRE AT "+ math.cos(angle).ToString() +  "\t" +   math.sin(angle).ToString() + "\t" + "TRAJECTORY \t" + trajectory_angle + " THE TRAJECTORY ITSLEF " + trajectory.x.ToString() + " " + trajectory.y.ToString());
+            Vector2 tmpVect = new Vector2(-(float)math.cos(angle) , -(float) math.sin(angle) );
+            //Vector2 tmpVect = new Vector2(1,0);
+            GameObject tempObject = BPS.instance.GetPooledObject("Bullet");
+            //Debug.Log("ANGLE" + trajectory_angle.ToString()+"POWER"+ power.ToString()+ "POS".ToString()+ this.transform.position.ToString());
+            tempObject.GetComponent<gun>().WakeUp((Vector2) this.transform.position, tmpVect, gun.damage);
     }
+}
 
-
+    // Game Engine
     private void OnEnable()
     {
         left.cont.Enable(); 
