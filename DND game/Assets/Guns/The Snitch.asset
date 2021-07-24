@@ -19,3 +19,5 @@ MonoBehaviour:
   knockBack: 150
   GunSprite: {fileID: -562510837690589916, guid: 327071580d8086c44990394c8c0579c8,
     type: 3}
+  bulletCount: 8
+  spread: 15

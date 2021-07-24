@@ -17,3 +17,6 @@ MonoBehaviour:
   bullet: 0
   fireRate: 10
   knockBack: 600
+  GunSprite: {fileID: 0}
+  bulletCount: 4
+  spread: 30

@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Collections.LowLevel.Unsafe;
 using Unity.Mathematics;
 using UnityEditor.PackageManager;
 
@@ -84,27 +85,25 @@ public class movement : MonoBehaviour
         if (gunCooldown > 0)
             return;
         gunCooldown = gun.fireRate;
-        Vector2 trajectory = cm.ScreenToWorldPoint(Mouse.current.position.ReadValue())-  this.transform.position ;
-        //Debug.Log(gun.gunName + " was used");
+        Vector2 trajectory =  this.transform.position - cm.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         trajectory.Normalize();
-        double trajectory_angle = (double) Mathf.Rad2Deg*Math.Atan2(trajectory.y, trajectory.x); 
-        double[] angels = Enumerable.Range(1, 4).Select(x => (double)((trajectory_angle + x * 30 / 4) * Mathf.Deg2Rad)).ToArray();
-        //double[] angels = {trajectory_angle} ;
-        //Vector2 power = gun.knockBack;
-        //var power = trajectory * gun.knockBack;
         if (!ishold)
             rb.velocity = trajectory*gun.knockBack;
 
-        //Bulletstuff
+        Func<Vector2, float, Vector2> rotate = (path, angle) => new Vector2(path.x*Mathf.Cos(angle) - path.y *Mathf.Sin(angle), path.x * Mathf.Sin(angle) + path.y * Mathf.Cos(angle)) ;
+        var tmp = Enumerable.Range(1, gun.lineCount - 1);
+            //.Select(x => rotate(trajectory, Mathf.Deg2Rad * (float) gun.spread * x));
+            Vector2[] paths = tmp.Select(x => rotate(trajectory, Mathf.Deg2Rad * (float)gun.spread * x))
+                .Concat(tmp.Select(x=>rotate(trajectory, Mathf.Deg2Rad * (float)gun.spread * -x)))
+                .Concat(new[] {trajectory}).ToArray();
+
+
+            //Bulletstuff
         Debug.ClearDeveloperConsole();
-        foreach (double angle in angels)
+        foreach (Vector2 path in paths)
         {
-            Debug.Log("ANGLE TO FIRE AT "+ math.cos(angle).ToString() +  "\t" +   math.sin(angle).ToString() + "\t" + "TRAJECTORY \t" + trajectory_angle + " THE TRAJECTORY ITSLEF " + trajectory.x.ToString() + " " + trajectory.y.ToString());
-            Vector2 tmpVect = new Vector2(-(float)math.cos(angle) , -(float) math.sin(angle) );
-            //Vector2 tmpVect = new Vector2(1,0);
             GameObject tempObject = BPS.instance.GetPooledObject("Bullet");
-            //Debug.Log("ANGLE" + trajectory_angle.ToString()+"POWER"+ power.ToString()+ "POS".ToString()+ this.transform.position.ToString());
-            tempObject.GetComponent<gun>().WakeUp((Vector2) this.transform.position, tmpVect, gun.damage);
+            tempObject.GetComponent<gun>().WakeUp((Vector2) this.transform.position, path, gun.damage);
     }
 }
 
