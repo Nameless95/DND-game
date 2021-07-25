@@ -16,7 +16,7 @@ public class movement : MonoBehaviour
     Control left;
     Rigidbody2D rb;
     public Camera cm;
-   public List<GunTemplate> guns;
+   public  static List<GunTemplate>  guns;
    GunTemplate gun; 
     private int select_gun_index = 0;
     float gunCooldown;
@@ -29,14 +29,12 @@ public class movement : MonoBehaviour
     bool ishold = false;
 
     void weaponswitch(bool isLeft) {
-        Debug.Log(select_gun_index.ToString());
-        if (isLeft)
-        {
+        
+        if (isLeft) {
             select_gun_index--;
         }
-        else
-        {
-        select_gun_index++;
+        else {
+            select_gun_index++;
 
         }
 
@@ -46,13 +44,14 @@ public class movement : MonoBehaviour
         gun = guns[select_gun_index];
         sprite.sprite = gun.GunSprite;
         sprite.size = new Vector2(gun.GunSprite.rect.width, gun.GunSprite.rect.height);
+        Debug.Log("SWITHC TO GUN " + select_gun_index.ToString());
 
     }
     void Awake()
     {
         left = new Control();
         rb = this.GetComponent<Rigidbody2D>();
-        left.cont.shoot.performed += ctx => shoot();
+        left.cont.shoot.performed += ctx => Shoot();
         
         left.cont.wpn_left.performed += ctx => weaponswitch(true);
         left.cont.wpn_right.performed += ctx => weaponswitch(false);
@@ -80,12 +79,13 @@ public class movement : MonoBehaviour
 
     }
 
-    void shoot()
+    private void Shoot()
     {
         if (gunCooldown > 0)
-            return;
+        { return; }
         gunCooldown = gun.fireRate;
         Vector2 trajectory =  this.transform.position - cm.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Debug.Log("FUCKKKKKKKKKKKKKKKKKK");
         trajectory.Normalize();
         if (!ishold)
             rb.velocity = trajectory*gun.knockBack;
@@ -99,9 +99,9 @@ public class movement : MonoBehaviour
 
 
             //Bulletstuff
-        Debug.ClearDeveloperConsole();
         foreach (Vector2 path in paths)
         {
+            Debug.Log("RUNNING\t " + path.ToString());
             GameObject tempObject = BPS.instance.GetPooledObject("Bullet");
             tempObject.GetComponent<gun>().WakeUp((Vector2) this.transform.position, path, gun.damage);
     }

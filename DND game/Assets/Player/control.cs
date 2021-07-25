@@ -54,8 +54,8 @@ public class @Control : IInputActionCollection, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""2ce587f6-bc19-411b-95b1-88fe2caeb628"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""id"": ""81d175b5-97e9-4cbc-9263-d0f6f055c8e8"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -65,8 +65,8 @@ public class @Control : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""81d175b5-97e9-4cbc-9263-d0f6f055c8e8"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""id"": ""9b261f17-be7b-4d27-b8cb-49d5476a9162"",
+                    ""path"": ""<Mouse>/press"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
