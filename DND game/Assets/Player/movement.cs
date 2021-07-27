@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using TMPro;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Mathematics;
+using UnityEditor;
 using UnityEditor.PackageManager;
 
 
@@ -16,7 +17,7 @@ public class movement : MonoBehaviour
     Control left;
     Rigidbody2D rb;
     public Camera cm;
-   public  static List<GunTemplate>  guns;
+    public static List<GunTemplate> guns;
    GunTemplate gun; 
     private int select_gun_index = 0;
     float gunCooldown;
@@ -25,6 +26,7 @@ public class movement : MonoBehaviour
     public GameObject GunSprite;
     public Camera cam;
     public SpriteRenderer sprite;
+    public GunTemplate[] _gun;
 
     bool ishold = false;
 
@@ -44,11 +46,16 @@ public class movement : MonoBehaviour
         gun = guns[select_gun_index];
         sprite.sprite = gun.GunSprite;
         sprite.size = new Vector2(gun.GunSprite.rect.width, gun.GunSprite.rect.height);
-        Debug.Log("SWITHC TO GUN " + select_gun_index.ToString());
+        Debug.Log("Switch to gun" + select_gun_index.ToString());
 
     }
     void Awake()
     {
+        if (guns == null)
+        {
+            guns = _gun.ToList();
+        }
+
         left = new Control();
         rb = this.GetComponent<Rigidbody2D>();
         left.cont.shoot.performed += ctx => Shoot();
