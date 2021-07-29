@@ -36,6 +36,6 @@ public class MainMenuButton : MonoBehaviour
 
     public void OnHoverExit()
     {
-        graphic.DOColor(startingColor, 0.4f);
+        graphic.DOColor(startingColor, 0.1f);
     }
 }
