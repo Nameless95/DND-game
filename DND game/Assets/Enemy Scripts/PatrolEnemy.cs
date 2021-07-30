@@ -9,6 +9,9 @@ public class PatrolEnemy : MonoBehaviour
     [HideInInspector]
     public bool IsAttacking;
 
+    public AudioClip attackSound;
+    public AudioSource source;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -20,6 +23,11 @@ public class PatrolEnemy : MonoBehaviour
 
         if ((player.transform.position - this.transform.position).sqrMagnitude < 7 * 7)
         {
+            if (!source.isPlaying)
+            {
+                source.Play();
+            }
+
             transform.Translate(Vector2.right * PatrolScript.speed * 3 * Time.deltaTime * PatrolScript.distance);
             IsAttacking = true; 
         }

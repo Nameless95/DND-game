@@ -21,6 +21,13 @@ public class movement : MonoBehaviour
     bool knockback = true;
     public  TMP_Text text;
 
+    [Header("Sound Effects")]
+    public AudioClip shootSound;
+    public AudioClip reloadSound;
+    public AudioClip dryFireSound;
+    public AudioSource source;
+
+
     void Awake()
     {
         left = new Control();
@@ -31,14 +38,16 @@ public class movement : MonoBehaviour
         left.cont.Holdback.canceled += ctx => knockback = true;
         left.cont.reload.performed += ctx =>
         {
-                if (reload == false)
-                {
-                        gunCooldown = gun.reloadTime;
-                        reload = true;
-                }
+            source.PlayOneShot(reloadSound, 1f);
+            if (reload == false) 
+            {
+                gunCooldown = gun.reloadTime;
+                reload = true;
+            }
         };
         gunCooldown = gun.fireRate;
         GunSprite.GetComponent<SpriteRenderer>().sprite = gun.GunSprite;
+
     }
 
     private void Update()
@@ -88,6 +97,8 @@ public class movement : MonoBehaviour
         }
         if (gun.ammo > 0)
         {
+            source.PlayOneShot(shootSound, 0.25f);
+
             gun.ammo--;
             gunCooldown = gun.fireRate;
             Vector2 power;
@@ -102,6 +113,12 @@ public class movement : MonoBehaviour
             //Bulletstuff
             GameObject tempObject = BPS.instance.GetPooledObject("Bullet");
             tempObject.GetComponent<gun>().WakeUp((Vector2)transform.position, power, gun.damage);
+
+        }
+        else
+        {
+            //dry fire
+            source.PlayOneShot(dryFireSound, 0.5f);
         }
         
     }
