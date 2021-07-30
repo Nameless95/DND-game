@@ -2571,6 +2571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 232801659}
   headMenu: {fileID: 499679711}
+  playButton: {fileID: 0}
 --- !u!4 &1571646984
 Transform:
   m_ObjectHideFlags: 0
@@ -2955,7 +2956,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 5d617aa2b310aed4f80f40cc34785a7e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 2a4578d47292c024c93fb1eb96796d48, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 85802590a09a80649bb4bccfe8e94e46, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

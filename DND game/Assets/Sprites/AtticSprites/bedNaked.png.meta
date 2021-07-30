@@ -110,11 +110,11 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 33
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 19}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -129,13 +129,13 @@ TextureImporter:
       name: bedNaked_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 33
         y: 0
         width: 32
-        height: 32
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 19}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -150,7 +150,7 @@ TextureImporter:
       name: bedNaked_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 65
         y: 0
         width: 32
         height: 13
@@ -171,7 +171,7 @@ TextureImporter:
       name: bedNaked_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 97
         y: 0
         width: 32
         height: 13
@@ -192,7 +192,7 @@ TextureImporter:
       name: bedNaked_4
       rect:
         serializedVersion: 2
-        x: 128
+        x: 129
         y: 0
         width: 32
         height: 13
@@ -213,13 +213,13 @@ TextureImporter:
       name: bedNaked_5
       rect:
         serializedVersion: 2
-        x: 160
+        x: 161
         y: 0
-        width: 32
-        height: 32
+        width: 31
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 19}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
