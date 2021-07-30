@@ -125,12 +125,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5028258254330561816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63ada09eeaed3ac4bae62f66e43a9a0a, type: 3}
+  m_Script: {fileID: 11500000, guid: d40263cc0812df0448e7b50419e99b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  distance: 1
-  groundDetection: {fileID: 5028258253034193776}
+  health: 20
+  deathEffect: {fileID: 1266392279119867486, guid: 803d9a010cb921645bca49162800b7b9,
+    type: 3}
 --- !u!61 &5028258254330561796
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -166,11 +166,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5028258254330561816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82b2b1507a1c7504487d08e209c5772a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e90809785edc1d4387f5602e0ab60ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
-  deathEffect: {fileID: 1266392279119867486, guid: 803d9a010cb921645bca49162800b7b9,
+  speed: 2
+  distance: 2
+  groundDetection: {fileID: 5028258253034193776}
+  playerCharacter: {fileID: 4934730836572146818, guid: 8d5be0e3963e41848a9f92dea4932886,
     type: 3}
 --- !u!114 &5028258254330561798
 MonoBehaviour:
@@ -184,4 +186,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cebf9c272852fdc41a511655d9313aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PatrolScript: {fileID: 5028258254330561817}
+  PatrolScript: {fileID: 5028258254330561797}
+  IsAttacking: 0

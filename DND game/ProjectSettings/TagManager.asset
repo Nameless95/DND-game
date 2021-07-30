@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - EBullet
   - BookBullet
+  - LightingBullet
+  - HealthPickUp
   layers:
   - Default
   - TransparentFX

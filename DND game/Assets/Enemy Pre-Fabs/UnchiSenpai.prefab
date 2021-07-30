@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   StopMoving: {fileID: 5174158402922123177}
-  damage: 0
+  damage: 5
   bullet: {fileID: 2699470765259262124, guid: 4ba0058d46c616d4cb3e80428bf70494, type: 3}
   BulletType: 2
   offset: {x: 0, y: 0.25}

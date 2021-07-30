@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar;
     public GameObject deathEffect;
 
+    private int bufferHealth; 
     private void Start()
     {
         currentHealth = maxHealth;
@@ -27,6 +28,23 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
+    void GainHeath()
+    {
+        currentHealth += 10;
+        if (currentHealth >= 40)
+        {
+            bufferHealth = currentHealth;
+            bufferHealth -= 5;
+            currentHealth = bufferHealth;
+        }
+        else
+        {
+            healthBar.SetHealth(currentHealth);
+        }
+
+    }
+
+  
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -38,6 +56,13 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(5); 
 
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("HealthPickUp"))
+        {
+            GainHeath(); 
         }
     }
 }
