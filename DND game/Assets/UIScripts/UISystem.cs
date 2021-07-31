@@ -9,7 +9,7 @@ public class UISystem : MonoBehaviour
     [SerializeField] TextMeshProUGUI toggleText;
    
     public void StartGame(){
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("OpeningDialogue");
     }
 
     public void QuitGame(){

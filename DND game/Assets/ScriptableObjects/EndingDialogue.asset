@@ -30,3 +30,7 @@ MonoBehaviour:
     lastInOrder: 0
     loadNewestScene: 0
     loadScene: 
+  - dialogue: I gotta work on my grindset.
+    lastInOrder: 0
+    loadNewestScene: 0
+    loadScene: Lobby

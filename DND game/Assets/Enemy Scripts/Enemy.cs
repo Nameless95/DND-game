@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
             Instantiate(deathEffect, transform.position, Quaternion.identity);
 
             if (isBoss)
-                SceneManager.LoadScene("EndingCutscene");
+                SceneManager.LoadScene("EndingDialogue");
 
             Destroy(this.gameObject);
         }

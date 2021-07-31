@@ -14,7 +14,7 @@ public class MusicPlayer : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
     void Start()
@@ -22,22 +22,31 @@ public class MusicPlayer : MonoBehaviour
     
         musicVolume = PlayerPrefs.GetFloat("volume");
         Debug.Log(PlayerPrefs.GetFloat("volume"));
-        volumer.value = musicVolume;
-        Musi.volume = musicVolume;
+
+        if (volumer != null)
+        {
+            volumer.value = musicVolume;
+            Musi.volume = musicVolume;
+        }
+        
         Steps.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Steps.isPlaying == false && firstPlay == false){
+        if (Steps.isPlaying == false && firstPlay == false)
+        {
             Musi.Play();
             firstPlay = true;
         }
         //Debug.Log(volumer.value);
         //Debug.Log(Musi.volume);
-        Musi.volume = volumer.value;
-        PlayerPrefs.SetFloat("volume", volumer.value);
+        if (volumer != null)
+        {
+            Musi.volume = volumer.value;
+            PlayerPrefs.SetFloat("volume", volumer.value);
+        }
     }
 
     public void updateVolume(float volume ){

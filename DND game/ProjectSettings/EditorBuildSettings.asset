@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/EndingDialogue.unity
+    guid: 864a33651b92040439aa523d62ee1b6a
+  - enabled: 1
+    path: Assets/Scenes/OpeningDialogue.unity
+    guid: 291b1e461fb2a5b4a9021408e69105cf
   m_configObjects: {}

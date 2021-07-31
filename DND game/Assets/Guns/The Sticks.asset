@@ -19,5 +19,5 @@ MonoBehaviour:
   knockBack: 10
   GunSprite: {fileID: 21300000, guid: 98c100e6faaaa3347b9c82eb417b580e, type: 3}
   magSize: 10
-  ammo: 6
-  reloadTime: 2
+  ammo: 8
+  reloadTime: 0.5

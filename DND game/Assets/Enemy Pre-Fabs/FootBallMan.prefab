@@ -135,6 +135,7 @@ MonoBehaviour:
   health: 20
   deathEffect: {fileID: 1266392279119867486, guid: 803d9a010cb921645bca49162800b7b9,
     type: 3}
+  isBoss: 0
 --- !u!61 &1574158998809772082
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -152,7 +153,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.25, y: 2.6875}
+    oldSize: {x: 2.3125, y: 2.875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -175,8 +176,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PatrolScript: {fileID: 1128898906555886053}
   IsAttacking: 0
-  attackSound: {fileID: 8300000, guid: 61c57dccfa6c6ad4bbd100abac6d2da3, type: 3}
-  source: {fileID: 3404788114763446139}
+  attackSound: {fileID: 8300000, guid: d470998aa00cf0b479f93dd8ea12cce1, type: 3}
+  triggerSource: {fileID: 3404788114763446139}
+  idleSource: {fileID: 3404788114763446139}
 --- !u!95 &5773473405877458145
 Animator:
   serializedVersion: 3
@@ -322,4 +324,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 1266392279119867486, guid: 803d9a010cb921645bca49162800b7b9,
+    type: 3}
+  isBoss: 0
