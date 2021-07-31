@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 1967343878740859959}
   - component: {fileID: 1967343878740859945}
   - component: {fileID: 3380038244532839029}
-  - component: {fileID: 3380038244532839028}
   - component: {fileID: 83221834976707085}
   - component: {fileID: 5174158402922123177}
   - component: {fileID: -8034093211314491940}
+  - component: {fileID: 8163151053828970280}
   m_Layer: 12
   m_Name: UnchiSenpai
   m_TagString: Enemy
@@ -134,20 +134,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3380038244532839028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1967343878740859957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9af1a86637205564a8205ef5921962f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 3380038244532839029}
-  Shooting: {fileID: -8034093211314491940}
 --- !u!114 &83221834976707085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +149,8 @@ MonoBehaviour:
   health: 20
   deathEffect: {fileID: 1266392279119867486, guid: 803d9a010cb921645bca49162800b7b9,
     type: 3}
+  deathSound: {fileID: 8300000, guid: 3d3133ddaeda1c74c8bc90c8f32c17c7, type: 3}
+  source: {fileID: 8163151053828970280}
 --- !u!114 &5174158402922123177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +187,103 @@ MonoBehaviour:
   BulletType: 2
   offset: {x: 0, y: 0.25}
   IsShooting: 0
+--- !u!82 &8163151053828970280
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967343878740859957}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 5d617aa2b310aed4f80f40cc34785a7e,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1967343879491967578
 GameObject:
   m_ObjectHideFlags: 0

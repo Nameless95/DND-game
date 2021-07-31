@@ -10,7 +10,8 @@ public class PatrolEnemy : MonoBehaviour
     public bool IsAttacking;
 
     public AudioClip attackSound;
-    public AudioSource source;
+    public AudioSource triggerSource;
+    public AudioSource idleSource;
 
     void Start()
     {
@@ -23,9 +24,11 @@ public class PatrolEnemy : MonoBehaviour
 
         if ((player.transform.position - this.transform.position).sqrMagnitude < 7 * 7)
         {
-            if (!source.isPlaying)
+            idleSource.Stop();
+
+            if (!triggerSource.isPlaying)
             {
-                source.Play();
+                triggerSource.Play();
             }
 
             transform.Translate(Vector2.right * PatrolScript.speed * 3 * Time.deltaTime * PatrolScript.distance);
@@ -33,6 +36,11 @@ public class PatrolEnemy : MonoBehaviour
         }
         else
         {
+            if (!idleSource.isPlaying)
+            {
+                idleSource.Play();
+            }
+
             IsAttacking = false; 
         }
         
