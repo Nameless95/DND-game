@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8927933924313100919}
   - component: {fileID: 8927933924313100918}
   - component: {fileID: 8927933924313100904}
-  - component: {fileID: 8927933924313100905}
   - component: {fileID: 6639172589190768388}
+  - component: {fileID: 2527448176348960129}
   m_Layer: 12
   m_Name: 'FlyingShootingEnemy '
   m_TagString: Enemy
@@ -110,21 +110,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0051198, y: 0.98879004}
   m_EdgeRadius: 0
---- !u!114 &8927933924313100905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8927933924313100916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82b2b1507a1c7504487d08e209c5772a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 20
-  deathEffect: {fileID: 1266392279119867486, guid: 803d9a010cb921645bca49162800b7b9,
-    type: 3}
 --- !u!114 &6639172589190768388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,4 +128,21 @@ MonoBehaviour:
   shootingRange: 5
   bullet: {fileID: 396643059264816569, guid: b2b4463742c88e54e80072ecb686e7ed, type: 3}
   fireRate: 0
+  BulletType: 0
   IsShooting: 0
+  offset: {x: 0, y: 0}
+--- !u!114 &2527448176348960129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8927933924313100916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40263cc0812df0448e7b50419e99b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  deathEffect: {fileID: 1266392279119867486, guid: 803d9a010cb921645bca49162800b7b9,
+    type: 3}

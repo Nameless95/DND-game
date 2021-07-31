@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4844770312978685379}
   - component: {fileID: 4844770312978685378}
   - component: {fileID: 4844770312978685404}
-  - component: {fileID: 4844770312978685405}
   - component: {fileID: 1993425644403138736}
+  - component: {fileID: 4632069144963624963}
   m_Layer: 12
   m_Name: FlyingDashingEnemy
   m_TagString: Enemy
@@ -110,21 +110,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.857291, y: 0.95921516}
   m_EdgeRadius: 0
---- !u!114 &4844770312978685405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4844770312978685376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82b2b1507a1c7504487d08e209c5772a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 20
-  deathEffect: {fileID: 1266392279119867486, guid: 803d9a010cb921645bca49162800b7b9,
-    type: 3}
 --- !u!114 &1993425644403138736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,3 +129,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   playerInRange: 0
+--- !u!114 &4632069144963624963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4844770312978685376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40263cc0812df0448e7b50419e99b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  deathEffect: {fileID: 1266392279119867486, guid: 803d9a010cb921645bca49162800b7b9,
+    type: 3}

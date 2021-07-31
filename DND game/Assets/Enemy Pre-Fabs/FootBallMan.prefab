@@ -44,9 +44,9 @@ GameObject:
   - component: {fileID: 1574158998809772082}
   - component: {fileID: 1574158998809772080}
   - component: {fileID: 5773473405877458145}
-  - component: {fileID: 5773473405877458144}
   - component: {fileID: 1128898906555886053}
   - component: {fileID: 3404788114763446139}
+  - component: {fileID: 306231974971066751}
   m_Layer: 12
   m_Name: FootBallMan
   m_TagString: Enemy
@@ -196,20 +196,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5773473405877458144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574158998809772078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cc1bc733938bd34d9d1e2eeb077c9e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 5773473405877458145}
-  Attack: {fileID: 1574158998809772080}
 --- !u!114 &1128898906555886053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,3 +309,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &306231974971066751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574158998809772078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40263cc0812df0448e7b50419e99b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  deathEffect: {fileID: 0}
