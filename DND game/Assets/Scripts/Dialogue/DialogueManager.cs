@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+using DG.Tweening;
 
 public class DialogueManager : MonoBehaviour
 {
-    public Text dialogueText;
-    public GameObject textObj;
-    public Image protait;
+    public TextMeshProUGUI dialogueText;
     public bool dialogueActive;
     bool updateDialog;
     public Dialogue[] dialogue;
     public int index;
+    public bool startOnAwake;
+    public bool fadeInText;
+    public bool shakeText;
+    public DialogueObj awakeDialogue;
 
     public static DialogueManager Instance;
     void Awake()
@@ -22,7 +26,8 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
-        textObj.gameObject.SetActive(false);
+        if (startOnAwake && awakeDialogue != null)
+            ApplyDialogue(awakeDialogue);
     }
 
     // Update is called once per frame
@@ -36,25 +41,20 @@ public class DialogueManager : MonoBehaviour
             updateDialog = true;
             dialogueText.text = dialogue[index].dialogue;
 
-            if(dialogue[index].protait != null)
-            {
-                protait.sprite = dialogue[index].protait;
-                protait.gameObject.SetActive(true);
-            }
-            else
-            {
-                protait.gameObject.SetActive(false);
-            }
+            if (fadeInText)
+                dialogueText.DOFade(1, 0.9f);
+
+            if (shakeText)
+                dialogueText.transform.DOShakePosition(99999, 1, 3);
         }
 
-        if (Input.GetButtonDown("Proceed"))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             if (dialogue[index].lastInOrder)
             {
                 if (dialogue[index].loadNewestScene)
                 {
                     SceneManager.LoadScene(dialogue[index].loadScene);
-                    //MySceneManager.Instance.LoadAndUnloadScenes(dialogue[index].loadScene, MySceneManager.Instance.currentScene.sceneId);
                 }
                 index = 0;
                 CloseDialogue();
@@ -75,8 +75,17 @@ public class DialogueManager : MonoBehaviour
     {
         dialogue = d.dialogues;
         dialogueActive = true;
-        textObj.SetActive(true);
         updateDialog = false;
+
+        dialogueText.gameObject.SetActive(true);
+
+
+        if (fadeInText)
+            dialogueText.DOFade(1, 0.9f);
+
+        if (shakeText)
+            dialogueText.transform.DOShakePosition(10, 1, 1);
+
         index = 0;
     }
 
@@ -84,7 +93,7 @@ public class DialogueManager : MonoBehaviour
     {
         index = 0;
         dialogueActive = false;
-        textObj.SetActive(false);
+        dialogueText.gameObject.SetActive(false);
     }
 
     #endregion

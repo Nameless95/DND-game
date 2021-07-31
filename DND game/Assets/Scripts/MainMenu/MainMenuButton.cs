@@ -21,7 +21,6 @@ public class MainMenuButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startingColor = graphic.color;
         Vector3 targetPosition = new Vector3(text.position.x, text.position.y + yPosition, text.position.z);
 
         text.DOMove(targetPosition, durationTime);

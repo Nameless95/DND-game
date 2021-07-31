@@ -7,8 +7,6 @@ public class Dialogue
 {
     [Header("Dialogue")]
     public string dialogue;
-    public Sprite protait;
-    [Space]
     [Header("Settings")]
     public bool lastInOrder;
     public bool loadNewestScene;
