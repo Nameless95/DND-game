@@ -53,3 +53,6 @@ MonoBehaviour:
   - id: BookBullet
     poolObject: {fileID: 2699470765259262124, guid: 4ba0058d46c616d4cb3e80428bf70494,
       type: 3}
+  - id: LightingBullet
+    poolObject: {fileID: 3908037656879755970, guid: 43a1d448e5b2528419965e0d18c78f0e,
+      type: 3}
